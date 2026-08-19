@@ -34,13 +34,13 @@
     border-top: 2px solid #1A1A1A;
     border-bottom: 2px solid #1A1A1A;
     padding: 20px 0;
+    position: relative;
+    transition: transition 0.3s ease-in-out;
     
-     
-    
-}
+     }
 
 
-/* Головний заголовок меню який я хз чи робити*/
+/* Головний заголовок меню який я хз чи робити
 .nav-main-title {
     font-size: 11px;
     text-transform: uppercase;
@@ -48,7 +48,7 @@
     color: #666;
     margin-bottom: 25px;
     text-align: center;
-}
+}*/
 
 /* ЗАГОЛОВОК ГРУПИ (PRESENT, PAST, FUTURE) */
 .nav-group-title {
@@ -136,7 +136,7 @@ main {
     text-transform: uppercase; /* Тільки великі літери */
     letter-spacing: 1px;       /* Елегантний інтервал між літерами */
     cursor: pointer;           /* не довбаний палець який мене бісе */ 
-    transition: 0.9s;          /* Плавна зміна кольору */
+    transition: 0.3s;          /* Плавна зміна кольору */
     margin-top: 20px;
 }
 
@@ -171,19 +171,70 @@ main {
     transition: 0.2s ease-in-out;
 }
 
+/*для телефону*/
+/* КНОПКА МЕНЮ ДЛЯ ТЕЛЕФОНУ  */
+.toggle-menu-btn {
+	display: none;
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	background-color: #1a1a1a;
+	color: #fbfbfa;
+	border: 2px solid #1a1a1a;
+	padding: 10px 15px;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing:1px;
+	z-index: 1000;
+}
 
-
+@media (max-width: 768px) {
+	.toggle-menu-btn {
+		display: block;
+	}
+	header {
+		margin-bottom: 30px;
+		padding-top: 50px;
+	}
+	.main-layout {
+		display: block;/* контент займає всю ширину екрану*/
+		padding: 0 20px;
+    }
+    /*сховати меню ліворуч за межі украну*/
+    .magazine-nav {
+    	position: fixed;
+    	top: 0;
+    	left: 0;
+    	width: 220px;
+    	height: 100%;
+    	background-color: #fbfbfa;
+    	box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+    	z-index: 999;
+    	padding: 80px 20px 20px 20px;
+    	box-sizing: border-box;
+    	transform: translateX(-100%);
+    }
+    /* оце має робити через жава скріпт */
+    .magazine-nav.open {
+    	transform: translateX(0);
+    }
+    main {
+    	width: 100%;
+    	text-align: center;
+    }
+}
 
 </style>
 </head>
 <body>
+	<button class="toggle-menu-btn" onclick="toggleMobileMenu()">Menu ☰</button><!--код кнопки-->
 	<header>
 		<div class=issue>English learn experement</div>
 		</header>
 		<div class="main-layout">
 
         <!-- ЛІВА СТОРОНА: НАВІГАЦІЯ -->
-        <nav class="magazine-nav">
+        <nav class="magazine-nav" id="mobileNav">
     <div class="nav-main-title"></div>
 
     <!-- ГРУПА PRESENT -->
@@ -285,6 +336,11 @@ main {
 
 
 
-
+<script>
+	function toggleMobileMenu() {
+		var nav = document.getElementById('mobileNav');
+		nav.classList.toggle('open'); // якщо касу "open" немає - додає його, якщо є - видаляє
+	}
+</script>	
 </body>
 </html>
