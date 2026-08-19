@@ -150,6 +150,26 @@ main {
 }
 /* стиль для кнопки закінчуєця тут*/
 
+.highlight-word {
+   /* font-family: 'Georgia', serif;*/
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #1E3A8A; /* фірмовий синій колір */
+}
+
+
+
+.highlight-word2 {
+    font-size: 13px;
+    color: #1A1A1A;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: 0.2s ease-in-out;
+}
+
 </style>
 </head>
 <body>
@@ -236,8 +256,13 @@ main {
                 Where to begin?
             </h2>
             
-            <p class="drop-cap">
-               The left side of page containce navigation.
+            <p>
+               The left side of page containce navigation of all tenses. 
+               <br>
+               In English, there are three tenses <span class="highlight-word">Present, Past, Future</span>, and four aspects for each of them <span class="highlight-word2">Simple, Continuous, Perfect, and Perfect Continuous</span>.<br>
+               Each English tense has its own formula. They share some similarities by their aspects, but every single one is unique. If you learn how to make sentense just for one aspect, you already know how to do it for the other tenses with the same aspect.<br>
+               For example, if we know the structure of <span class="highlight-word">Present</span> <span class="highlight-word2">Simple</span>, we automatically know <span class="highlight-word">Past</span> <span class="highlight-word2">Simple</span> and <span class="highlight-word">Future</span> <span class="highlight-word2">Simple</span>. So, I think it's great idea to go by asppects rather than by tenses.<br>
+               Learning the formulas is siper simpl, but exploring their use cases is way more interesting.
             </p>
             <div class="center-box">
              <button class="btn-check" onclick="window.open('present-continuous.html', '_blank')">start learning</button>
