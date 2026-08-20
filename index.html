@@ -35,7 +35,7 @@
     border-bottom: 2px solid #1A1A1A;
     padding: 20px 0;
     position: relative;
-    transition: transition 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
     
      }
 
@@ -194,6 +194,9 @@ main {
 	.toggle-menu-btn {
 		display: block;
 	}
+	.horizontal-aspect-nav{
+		justify-content: flex-start;
+	}
 	header {
 		margin-bottom: 30px;
 		padding-top: 10px;
@@ -238,12 +241,14 @@ main {
 /* Контейнер для нового горизонтального меню */
 .horizontal-aspect-nav {
     display: flex;
-    justify-content: center; /* Центруємо посилання */
+    justify-content: safe center; /* Центруємо посилання */
     gap: 25px; /* Відступ між пунктами */
     margin: 30px 0;
     padding: 10px 0;
     border-top: 1px dashed #E0E0E0; /* Тонка пунктирна лінія зверху */
     border-bottom: 1px dashed #E0E0E0; /* Тонка пунктирна лінія знизу */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Стиль посилань */
@@ -271,6 +276,10 @@ main {
 }
 /* Контейнер для нового горизонтального меню закнічуєця тут */
 
+
+
+
+
 </style>
 </head>
 <body>
@@ -289,7 +298,7 @@ main {
 
         <!-- ЛІВА СТОРОНА: НАВІГАЦІЯ -->
         <nav class="magazine-nav" id="mobileNav">
-    <div class="nav-main-title"></div>
+    
 
     <!-- ГРУПА PRESENT -->
     <div class="nav-group-title">Present</div>
@@ -390,9 +399,7 @@ main {
 
         </main>
 
-    </div> <!-- Кінець main-layout -->
-
-</div> <!-- Кінець container -->
+    
 
 
 </div> <!-- Кінець container <div class="main-layout"> -->
