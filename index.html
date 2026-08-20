@@ -107,6 +107,7 @@
 .nav-link:hover {
     color: #1E3A8A;
     padding-left: 5px;
+
 }
 	 /* стиль блоку навігації для меню закінчуєця тут*/
 
@@ -115,6 +116,7 @@
 	 /* Контент автоматично займає все вільне місце справа */
 main {
     flex-grow: 1;
+     margin-right: 20px;
 }
 .main-layout {
     display: flex;        /* строє меню і контент в один рядок */
@@ -225,6 +227,50 @@ main {
     }
 }
 
+/*для телефону*/
+/* КНОПКА МЕНЮ ДЛЯ ТЕЛЕФОНУ закінчуєця тут  */
+
+
+
+
+
+
+/* Контейнер для нового горизонтального меню */
+.horizontal-aspect-nav {
+    display: flex;
+    justify-content: center; /* Центруємо посилання */
+    gap: 25px; /* Відступ між пунктами */
+    margin: 30px 0;
+    padding: 10px 0;
+    border-top: 1px dashed #E0E0E0; /* Тонка пунктирна лінія зверху */
+    border-bottom: 1px dashed #E0E0E0; /* Тонка пунктирна лінія знизу */
+}
+
+/* Стиль посилань */
+.aspect-link {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #1A1A1A;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+/* Ефект при наведенні */
+.aspect-link:hover {
+    color: #1E3A8A; /* Наш фірмовий синій */
+}
+
+/* Стиль для активного (поточного) часу */
+.aspect-link.active {
+    color: #1E3A8A;
+    border-bottom: 1px solid #1E3A8A; /* Елегантне підкреслення активного пункту */
+    padding-bottom: 20px;
+    margin-bottom: -20px; /* Тримає лінію на рівні рамки */
+}
+/* Контейнер для нового горизонтального меню закнічуєця тут */
+
 </style>
 </head>
 <body>
@@ -232,6 +278,13 @@ main {
 	<header>
 		<div class=issue>English learn experement</div>
 		</header>
+
+
+
+
+
+
+
 		<div class="main-layout">
 
         <!-- ЛІВА СТОРОНА: НАВІГАЦІЯ -->
@@ -316,14 +369,25 @@ main {
                The left side of page containce navigation of all tenses. 
                <br>
                In English, there are three tenses <span class="highlight-word">Present, Past, Future</span>, and four aspects for each of them <span class="highlight-word2">Simple, Continuous, Perfect, and Perfect Continuous</span>.<br>
-               Each English tense has its own formula. They share some similarities by their aspects, but every single one is unique. If you learn how to make sentense just for one aspect, you already know how to do it for the other tenses with the same aspect.<br>
-               For example, if we know the structure of <span class="highlight-word">Present</span> <span class="highlight-word2">Simple</span>, we automatically know <span class="highlight-word">Past</span> <span class="highlight-word2">Simple</span> and <span class="highlight-word">Future</span> <span class="highlight-word2">Simple</span>. So, I think it's great idea to go by asppects rather than by tenses.<br>
-               Learning the formulas is super simple, but exploring their use cases is way more interesting.
+               <br>
+               Each tense has its own formula and shares some similarities by their aspects, but every single one is unique. If you learn how to make sentense just for one aspect, you already know how to do it for the other tenses with the same aspect.<br>
+               <br>
+               For example, if we know the structure of <span class="highlight-word">Present</span> <span class="highlight-word2">Simple</span>, we automatically know <span class="highlight-word">Past</span> <span class="highlight-word2">Simple</span> and <span class="highlight-word">Future</span> <span class="highlight-word2">Simple</span>. <br>
+               So, I think it's great idea to go by asppects rather than by tenses. Also I sugest to start from <span class="highlight-word2">continuius</span> aspect, it's the moust easiest one to undestand.<br>
+               <!--Learning the formulas is super simple, but exploring their use cases is way more interesting. -->
             </p>
             <div class="center-box">
              <button class="btn-check" onclick="window.open('present-continuous.html', '_blank')">start learning</button>
              <!--кнопка відкриваєця в тій же сторінці а має в нові вкладці-->
             </div>
+            <nav class="horizontal-aspect-nav">
+    <!-- Додаємо клас .active до того часу, на сторінці якого ми зараз перебуваємо -->
+    <a href="present-simple.html" class="aspect-link active">Simple</a>
+    <a href="present-continuous.html" class="aspect-link">Continuous</a>
+    <a href="present-perfect.html" class="aspect-link">Perfect</a>
+    <a href="present-perfect-continuous.html" class="aspect-link">Perfect Continuous</a>
+</nav>
+
         </main>
 
     </div> <!-- Кінець main-layout -->
@@ -332,7 +396,6 @@ main {
 
 
 </div> <!-- Кінець container <div class="main-layout"> -->
-
 
 
 
