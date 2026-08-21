@@ -5,6 +5,7 @@
 <title>English experement</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 <style>
 	body {
         background-color: #FBFBFA; 
@@ -27,7 +28,11 @@
             color: #666;
         }
         /* стиль блоку навігації для меню починаєця тут*/
-        
+
+        footer {
+  padding: 80px;
+  text-align: center;
+  }
 .magazine-nav {
     width: 200px; /* Ширина меню */
     flex-shrink: 0;
@@ -241,6 +246,7 @@ main {
 /* Контейнер для нового горизонтального меню */
 .horizontal-aspect-nav {
     display: flex;
+    flex-wrap: nowrap; /* забороняємо перенос пунктів меню на новий рядок */
     justify-content: safe center; /* Центруємо посилання */
     gap: 25px; /* Відступ між пунктами */
     margin: 30px 0;
@@ -248,6 +254,7 @@ main {
     border-top: 1px dashed #E0E0E0; /* Тонка пунктирна лінія зверху */
     border-bottom: 1px dashed #E0E0E0; /* Тонка пунктирна лінія знизу */
     overflow-x: auto;
+    overflow-y: hidden; /* забороняємо прокручування вгору-вниз */
     -webkit-overflow-scrolling: touch;
 }
 
@@ -260,6 +267,7 @@ main {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s ease;
+    white-space: nowrap; /* забороняємо перенос тексту всередині посилання */
 }
 
 /* Ефект при наведенні */
@@ -377,7 +385,7 @@ main {
             <p>
                The left side of page containce navigation of all tenses. 
                <br>
-               In English, there are three tenses <span class="highlight-word">Present, Past, Future</span>, and four aspects for each of them <span class="highlight-word2">Simple, Continuous, Perfect, and Perfect Continuous</span>.<br>
+               In English, there are three tenses <span class="highlight-word">Present, Past, Future</span>, and four aspects for each of them <span class="highlight-word2">Simple, Continuous, Perfect,</span> and <span class="highlight-word2">Perfect Continuous</span>.<br>
                <br>
                Each tense has its own formula and shares some similarities by their aspects, but every single one is unique. If you learn how to make sentense just for one aspect, you already know how to do it for the other tenses with the same aspect.<br>
                <br>
@@ -396,7 +404,9 @@ main {
     <a href="aspect-perfect.html" class="aspect-link">Perfect</a>
     <a href="aspect-perfect-continuous.html" class="aspect-link">Perfect Continuous</a>
 </nav>
-
+<footer>
+    <p>© 2026 Gzoim</p>
+</footer>
         </main>
 
     
