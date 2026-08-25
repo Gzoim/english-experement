@@ -61,6 +61,91 @@
     color: #FBFBFA;
 }
 /* кнопка на головну сторінку закінчується тут */
+
+/* таблиця неправильний дієслів */
+
+/* Кнопка-закладка, яка завжди прикріплена праворуч */
+.side-toggle-btn {
+    position: fixed;
+    right: 0;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: right bottom;
+    background-color: #1A1A1A;
+    color: #FBFBFA;
+    border: none;
+    padding: 10px 20px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.2s;
+}
+
+
+.side-toggle-btn:hover {
+    background-color: #1E3A8A;
+}
+/* Позиція кожної кнопки — щоб не накладались одна на одну */
+.verbs-toggle-btn { top: 40%; }
+.tobe-toggle-btn { top: 60%; }
+
+.verbs-toggle-btn:hover {
+    background-color: #1E3A8A; /* Наш фірмовий синій */
+}
+
+
+/* Сама висувна панель */
+.side-panel {
+    position: fixed;
+    right: -450px;
+    top: 0;
+    width: 400px;
+    height: 100vh;
+    background-color: #F5F4F0;
+    box-shadow: -5px 0 25px rgba(0,0,0,0.05);
+    z-index: 999;
+    transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    padding: 40px 25px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    border-left: 1px solid #1A1A1A;
+}
+.side-panel.open {
+    right: 0;
+}
+
+/* Заголовок всередині панелі */
+.sidebar-title {
+    font-family: 'Georgia', serif;
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+
+
+
+/* Строга таблиця дієслів всередині панелі */
+.verbs-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.verbs-table th, .verbs-table td {
+    padding: 10px 5px;
+    text-align: left;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.verbs-table th {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    color: #1E3A8A;
+    font-weight: normal;
+}
+/* таблиця неправильних дієслів закінчується тут */
 </style>
 <body>
     <header>
@@ -146,5 +231,118 @@ Location - It tells us exectly where a person or an object is in space or where 
     <footer>
     <p>© 2026 Gzoim</p>
 </footer>
+
+
+
+<!-- КНОПКА-ЗАКЛАДКА (завжди видима праворуч) -->
+<button class="side-toggle-btn verbs-toggle-btn" onclick="toggleSidebar('verbsSidebar')">Irregular Verbs</button>
+<button class="side-toggle-btn tobe-toggle-btn" onclick="toggleSidebar('tobeSidebar')">To Be Forms</button>
+
+<div class="side-panel" id="verbsSidebar">
+    <div class="sidebar-title">Irregular Verbs</div>
+    <table class="verbs-table">
+        <thead>
+            <tr>
+                <th>Infinitive</th>
+                <th>Past Simple</th>
+                <th>Past Partiсiple</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>be</strong></td>
+                <td>was / were</td>
+                <td>been</td>
+            </tr>
+            <tr>
+                <td><strong>go</strong></td>
+                <td>went</td>
+                <td>gone</td>
+            </tr>
+             <tr>
+                <td><strong>get</strong></td>
+                <td>got</td>
+                <td>got</td>
+            </tr>
+            <tr>
+                <td><strong>give</strong></td>
+                <td>gave</td>
+                <td>given</td>
+            </tr>
+            <tr>
+                <td><strong>do</strong></td>
+                <td>did</td>
+                <td>done</td>
+            </tr>
+            <tr>
+                <td><strong>come</strong></td>
+                <td>came</td>
+                <td>come</td>
+            </tr>
+            <tr>
+                <td><strong>have</strong></td>
+                <td>had</td>
+                <td>had</td>
+            </tr>
+            <tr>
+                <td><strong>know</strong></td>
+                <td>knew</td>
+                <td>known</td>
+            </tr>
+            <tr>
+                <td><strong>make</strong></td>
+                <td>made</td>
+                <td>made</td>
+            </tr>
+            <tr>
+                <td><strong>see</strong></td>
+                <td>saw</td>
+                <td>seen</td>
+            </tr>
+            <tr>
+                <td><strong>take</strong></td>
+                <td>took</td>
+                <td>taken</td>
+            </tr>
+            <tr>
+                <td><strong>tell</strong></td>
+                <td>told</td>
+                <td>told</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+<div class="side-panel" id="tobeSidebar">
+    <div class="sidebar-title">To Be Forms</div>
+    <table class="verbs-table">
+        <thead>
+            <tr><th>Tense</th><th>Subject</th><th>Form</th></tr>
+        </thead>
+        <tbody>
+            <tr><td rowspan="3">Present</td><td>I</td><td>am</td></tr>
+            <tr><td>He / She / It</td><td>is</td></tr>
+            <tr><td>You / We / They</td><td>are</td></tr>
+            <tr><td rowspan="2">Past</td><td>I / He / She / It</td><td>was</td></tr>
+            <tr><td>You / We / They</td><td>were</td></tr>
+            <tr><td>Future</td><td>Any subject</td><td>will be</td></tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+<script>
+    function toggleSidebar(id) {
+        document.getElementById(id).classList.toggle('open');
+    }
+</script>
+
 </body>
 </html>
