@@ -162,7 +162,35 @@
 
 
 
-/*  таблиця дієслів всередині панелі */
+
+.table-block {
+    padding: 20px 15px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+}
+
+.tobe-block {
+    background-color: rgba(74, 111, 165, 0.08);
+    border-left: 3px solid #4A6FA5;
+}
+
+.tobe-block .sidebar-title {
+    color: #4A6FA5;
+}
+
+.aux-block {
+    background-color: rgba(184, 134, 11, 0.08);
+    border-left: 3px solid #B8860B;
+}
+
+.aux-block .sidebar-title {
+    color: #B8860B;
+}
+
+
+
+
+/*  таблиця неправильних дієслів всередині панелі */
 .verbs-table {
     width: 100%;
     border-collapse: collapse;
@@ -317,13 +345,13 @@
  <p>First, we need to know that the Simple aspect has two types of sentences:</p>
 
     <details class="sentence-type">
-    <summary> <span style="color: #360522;">Verb sentence (Action sentence)</span></summary>
+    <summary> <span style="color: #B8860B;">Verb sentence (Action sentence)</span></summary>
     <p>Action sentence (or Verb sentence) stands for sentences which contain a verb. <br>If there is a verb, the sentence automatically describes a physical (e.g., walk) or mental (e.g., know) action.<br>
     Formula: <strong>Subject + Verb</strong></p>
 </details>
 
 <details class="sentence-type">
-    <summary><span style="color:#003C34;">Non-verb sentence ("To be" sentence)</span></summary>
+    <summary><span style="color:#4A6FA5;">Non-verb sentence ("To be" sentence)</span></summary>
     <p>Non-verb sentence (or "To be" sentence) stands for sentences where there is no verb, so there is no action.<br> These sentences just describe information about someone or something (e.g., small, tall, happy, sad, cold...).<br>
     Formula: <strong>Subject + To be + Complement</strong></p>
 </details>
@@ -354,7 +382,7 @@
             <span class="hint">sentence types</span>
         </span>
     </summary>
-    <p><span style="color: #360522;">erb sentence</span><br><span style="color:#003C34;">Non-verb </span></p>
+    <p><span style="color: #B8860B;">Verb sentence</span><br><span style="color:#4A6FA5;">Non-verb </span></p>
 </details>
 <details class="tense-details">
     <summary>
@@ -363,7 +391,7 @@
             <span class="hint">sentence types</span>
         </span>
     </summary>
-    <p><span style="color: #360522;">Verb sentence</span><br><span style="color:#003C34;">Non-verb </span></p>
+    <p><span style="color: #B8860B;">Verb sentence</span><br><span style="color:#4A6FA5;">Non-verb </span></p>
 </details>
 <details class="tense-details">
     <summary>
@@ -372,7 +400,7 @@
             <span class="hint">sentence types</span>
         </span>
     </summary>
-    <p><span style="color: #360522;">Verb sentence</span><br><span style="color:#003C34;">Non-verb</span> </p>
+    <p><span style="color: #B8860B;">Verb sentence</span><br><span style="color:#4A6FA5;">Non-verb</span> </p>
 </details>
 </div>
 
@@ -522,6 +550,8 @@ Location - It tells us exectly where a person or an object is in space or where 
 
 <div class="side-panel" id="tobeSidebar">
     <button class="close-sidebar-btn" onclick="toggleSidebar('tobeSidebar')">»</button>
+
+<div class="table-block tobe-block">
     <div class="sidebar-title" >To Be Forms</div>
     <table class="verbs-table">
         <thead>
@@ -553,9 +583,10 @@ Location - It tells us exectly where a person or an object is in space or where 
             </tr>
         </tbody>
     </table>
-
+</div>
     
 
+<div class="table-block aux-block">
     <div class="sidebar-title" style="margin-top: 120px";>Auxiliary Verbs</div>
     <table class="verbs-table">
         <thead>
@@ -587,7 +618,7 @@ Location - It tells us exectly where a person or an object is in space or where 
             </tr>
         </tbody>
     </table>
-
+</div>
 </div>
 
 
