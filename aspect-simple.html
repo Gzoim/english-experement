@@ -47,7 +47,7 @@
     position: fixed;
     top: 0px;
     left: 0px;
-    font-size: 15px;
+    font-size: 22px;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #1A1A1A;
@@ -105,10 +105,10 @@
     border: none;
     font-size: 22px;
     line-height: 1;
-    color: #1A1A1A;
+    color: rgba(26, 26, 26, 1);
     cursor: pointer;
     padding: 0;
-    transition: color 0.2s ease;
+    transition: color 0.3s ease;
 }
 .close-sidebar-btn:hover {
     color: #0F2157;
@@ -118,9 +118,9 @@
 /* Сама висувна панель */
 .side-panel {
     position: fixed;
-    right: -450px;
+    right: -350px;
     top: 0;
-    width: 400px;
+    width: 300px;
     height: 100vh;
     background-color: #F5F4F0;
     box-shadow: -5px 0 25px rgba(0,0,0,0.05);
@@ -172,7 +172,7 @@
      <div class="issue">Simple aspect</div>
     </header>
 
-        <a href="index.html" class="btn-back">←</a>
+        <a href="index.html" class="btn-back">«</a>
 
 
 <article>
@@ -259,7 +259,7 @@ Location - It tells us exectly where a person or an object is in space or where 
 <button class="side-toggle-btn tobe-toggle-btn" onclick="toggleSidebar('tobeSidebar')">Help Verbs</button>
 
 <div class="side-panel" id="verbsSidebar">
-    <button class="close-sidebar-btn" onclick="toggleSidebar('verbsSidebar')">×</button>
+    <button class="close-sidebar-btn" onclick="toggleSidebar('verbsSidebar')">»</button>
     <div class="sidebar-title">Irregular Verbs</div>
     <table class="verbs-table">
         <thead>
@@ -341,7 +341,7 @@ Location - It tells us exectly where a person or an object is in space or where 
 
 
 <div class="side-panel" id="tobeSidebar">
-    <button class="close-sidebar-btn" onclick="toggleSidebar('tobeSidebar')">×</button>
+    <button class="close-sidebar-btn" onclick="toggleSidebar('tobeSidebar')">»</button>
     <div class="sidebar-title" >To Be Forms</div>
     <table class="verbs-table">
         <thead>
