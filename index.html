@@ -70,7 +70,7 @@
 }
 
 /* Перший заголовок групи не треба відступу зверху */
-.nav-group-title:first-child {
+.nav-group-title:first-of-type {
     margin-top: 0;
 }
 
@@ -194,11 +194,21 @@ main {
 	letter-spacing:1px;
 	z-index: 1000;
 }
+/* КНОПКА МЕНЮ ДЛЯ ТЕЛЕФОНУ ЗВКІНЧУЄЦЯ ТУТ */
+
+.close-mobile-nav-btn { /* щоб кнопки « не було в повноекранному режимі */
+    display: none;
+}
+
 
 @media (max-width: 768px) {
+	
 	.toggle-menu-btn {
 		display: block;
 	}
+	.close-mobile-nav-btn {
+    display: block;
+}
 	.horizontal-aspect-nav{
 		justify-content: flex-start;
 	}
@@ -238,14 +248,14 @@ main {
 /*для телефону*/
 /* КНОПКА МЕНЮ ДЛЯ ТЕЛЕФОНУ закінчуєця тут  */
 
-/*кнопка Х починаєця тут*/
+/*кнопка « починаєця тут*/
 .close-sidebar-btn {
     position: absolute;
-    top: 10px;
-    right: 15px;
+    top: 5px;
+    right: 12px;
     background: none;
     border: none;
-    font-size: 22px;
+    font-size: 20px;
     line-height: 1;
     color: rgba(26, 26, 26, 1);
     cursor: pointer;
@@ -255,8 +265,7 @@ main {
 .close-sidebar-btn:hover {
     color: #0F2157;
 }
-/* кнопка Х закінчується тут */
-
+/* кнопка « закінчується тут */
 
 
 
@@ -325,7 +334,7 @@ main {
         <!-- ЛІВА СТОРОНА: НАВІГАЦІЯ -->
         <nav class="magazine-nav" id="mobileNav">
 
-    <button class="close-sidebar-btn" onclick="toggleMobileMenu()">«</button>
+    <button class="close-sidebar-btn close-mobile-nav-btn" onclick="toggleMobileMenu()">«</button>
 
     <!-- ГРУПА PRESENT -->
     <div class="nav-group-title">Present</div>
