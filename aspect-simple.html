@@ -253,22 +253,15 @@
 
 .tense-row {
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    gap: 30px;
     margin: 30px 0;
     align-items: flex-start;
 }
 .tense-details {
-    flex: 1;
+    flex: 0.1 auto;
     border-top: 2px solid #1A1A1A;
     padding-top: 10px;
-}
-.tense-details summary {
-    cursor: pointer;
-    font-family: 'Georgia', serif;
-    color: #1E3A8A;
-    font-size: 16px;
-    text-align: center;
-    list-style: none;
 }
 .tense-details summary::-webkit-details-marker {
     display: none;
@@ -278,6 +271,46 @@
     text-align: center;
     font-size: 14px;
 }
+.tense-details summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+.tense-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Georgia', serif;
+    color: #0F2157;
+    font-size: 22px;
+    text-align: center;
+}
+.tense-details .hint {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+    margin-top: 4px;
+}
+/* це для галочок */
+.arrow {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid #1A1A1A;
+    border-bottom: 2px solid #1A1A1A;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+}
+.tense-details[open] .arrow {
+    transform: rotate(225deg);
+}
+/*це для галочок*/
 
 /* типи речень */
 </style>
@@ -293,6 +326,7 @@
     
  <h1>How to understand the Simple Aspect? </h1>
  <p>First, we need to know that the Simple aspect has two types of sentences:</p><br>
+
     <details class="sentence-type">
     <summary> Verb sentence (Action sentence)</summary>
     <p>Action sentence (or Verb sentence) stands for sentences which contain a verb. <br>If there is a verb, the sentence automatically describes a physical (e.g., walk) or mental (e.g., know) action.<br>
@@ -304,6 +338,7 @@
     <p>Non-verb sentence (or "To be" sentence) stands for sentences where there is no verb, so there is no action.<br> These sentences just describe information about someone or something (e.g., small, tall, happy, sad, cold...).<br>
     Formula: <strong>Subject + To be + Complement</strong></p>
 </details>
+
    <!-- <p>First type - Action sentence or Verb sentence.<br>
     Second type - Non-verb sentences or "To be" sentence.<br>
     Why do we name these two types like that?  <br>
@@ -314,6 +349,7 @@
  Verb sentence: Subject + Verb  <br>
  "To be" sentence: Subject + To be + Complement.<br>
 </p>-->
+
 <p>
  Next, what we need to know is that there are three tenses: Present, Past and Future, and each has a Simple aspect.<br> So we have Present Simple, Past Simple and Future Simple, and each has two types of sentences.<br> 
  <!--<br>So, what do we have now? <br>
@@ -323,15 +359,38 @@
 
  <div class="tense-row">
     <details class="tense-details">
-        <summary>Present Simple</summary>
+        <summary>
+          <span class="arrow"></span>
+          <span class="tense-text">
+            Present Simple
+          <span class="hint">sentence types</span>
+          </span>
+          <span class="arrow"></span>
+        </summary>
         <p>Verb sentence<br>"To be" sentence</p>
     </details>
+
     <details class="tense-details">
-        <summary>Past Simple</summary>
+        <summary>
+          <span class="arrow"></span>
+          <span class="tense-text">
+            Past Simple
+          <span class="hint">sentence types</span>
+          </span>
+          <span class="arrow"></span>
+        </summary>
         <p>Verb sentence<br>"To be" sentence</p>
     </details>
+
     <details class="tense-details">
-        <summary>Future Simple</summary>
+        <summary>
+            <span class="arrow"></span>
+          <span class="tense-text">
+            Future Simple
+          <span class="hint">sentence types</span>
+          </span>
+          <span class="arrow"></span>
+        </summary>
         <p>Verb sentence<br>"To be" sentence</p>
     </details>
 </div>
