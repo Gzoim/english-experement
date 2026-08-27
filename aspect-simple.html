@@ -170,21 +170,21 @@
 }
 
 .tobe-block {
-    background-color: rgba(74, 111, 165, 0.08);
-    border-left: 3px solid #4A6FA5;
-}
-
-.tobe-block .sidebar-title {
-    color: #4A6FA5;
-}
-
-.aux-block {
     background-color: rgba(184, 134, 11, 0.08);
     border-left: 3px solid #B8860B;
 }
 
-.aux-block .sidebar-title {
+.tobe-block .sidebar-title {
     color: #B8860B;
+}
+
+.aux-block {
+    background-color: rgba(74, 111, 165, 0.08);
+    border-left: 3px solid #4A6FA5;
+}
+
+.aux-block .sidebar-title {
+    color: #4A6FA5;
 }
 
 
@@ -250,12 +250,12 @@
 }
 .sentence-type summary {
     cursor: pointer;
-    font-weight: bold;
-    color: #0F2157;
+    font-weight: /*bold*/;
+    font-size: 18px;
+    font-family: 'Georgia', serif;
     list-style: none;
     position: relative;
     padding-left: 20px;
-
 }
 .sentence-type summary::-webkit-details-marker {
     display: none;
@@ -380,13 +380,13 @@
  <p>First, we need to know that the Simple aspect has two types of sentences:</p>
 
     <details class="sentence-type">
-    <summary> <span style="color: #B8860B;">Verb sentence (Action sentence)</span></summary>
+    <summary> <span style="color:#2E4466;">Verb sentence (Action sentence)</span></summary>
     <p>Action sentence (or Verb sentence) stands for sentences which contain a verb. <br>If there is a verb, the sentence automatically describes a physical (e.g., walk) or mental (e.g., know) action.<br>
     Formula: <strong>Subject + Verb</strong></p>
 </details>
 
 <details class="sentence-type">
-    <summary><span style="color:#4A6FA5;">Non-verb sentence ("To be" sentence)</span></summary>
+    <summary><span style="color:#614706">Non-verb sentence ("To be" sentence)</span></summary>
     <p>Non-verb sentence (or "To be" sentence) stands for sentences where there is no verb, so there is no action.<br> These sentences just describe information about someone or something (e.g., small, tall, happy, sad, cold...).<br>
     Formula: <strong>Subject + To be + Complement</strong></p>
 </details>
