@@ -261,13 +261,19 @@
     display: none;
 }
 .sentence-type summary::before {
-    content: /*"+";*/
+    content: "▾";
     position: absolute;
     left: 0;
     color: #1A1A1A;
 }
 .sentence-type[open] summary::before {
-    content: "−";
+    content: "▴";
+}
+.type-verb summary::before {
+    color: #243650;
+}
+.type-nonverb summary::before {
+    color: #453204;
 }
 .sentence-type p {
     margin: 10px 0 0 20px;
@@ -344,7 +350,7 @@
 
 
 
-
+/* для формути */
 
 .formula {
     font-family: 'Georgia', serif;
@@ -361,17 +367,13 @@
     color: #1A1A1A;
 }
 
+/* для формули */
 
 
 
 
 
 
-.tense-label {
-    font-family: 'Georgia', serif;
-    color: #0F2157;
-    font-size: 20px;
-}
 </style>
 <body>
     <header>
@@ -386,13 +388,12 @@
  <h1>How to understand the Simple Aspect? </h1>
  <p>First, we need to know that the Simple aspect has two types of sentences:</p>
 
-    <details class="sentence-type">
+   <details class="sentence-type type-verb">
     <summary> <span style="color:#2E4466;">Verb sentence (Action sentence)</span></summary>
     <p>Action sentence (or Verb sentence) stands for sentences which contain a verb. <br>If there is a verb, the sentence automatically describes a physical (e.g., walk) or mental (e.g., know) action.<br>
     Formula: <strong>Subject + Verb</strong></p>
 </details>
-
-<details class="sentence-type">
+<details class="sentence-type type-nonverb">
     <summary><span style="color:#614706">Non-verb sentence ("To be" sentence)</span></summary>
     <p>Non-verb sentence (or "To be" sentence) stands for sentences where there is no verb, so there is no action.<br> These sentences just describe information about someone or something (e.g., small, tall, happy, sad, cold...).<br>
     Formula: <strong>Subject + To be + Complement</strong></p>
@@ -446,13 +447,15 @@
     <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #666; margin-bottom: 8px;">
         Non-verb sentence Formula
     </div>
-    <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #666; margin-bottom: 8px;">
-        
-    </div>
     <div style="display: inline-block; font-family: 'Georgia', serif; font-size: 22px;  letter-spacing: 0.5px; border-top: 1px solid #1A1A1A; border-bottom: 2px solid #1A1A1A; padding: 12px 0;">
         Subject + to be + Complement
     </div>
 </div>
+
+
+
+
+
   But if they have the same formula, how do we know what tense it is? There is somthing that really helps us: it is different "To be" forms for each tense.<br>
 </p>
 <p>
@@ -500,6 +503,18 @@ Location - It tells us exectly where a person or an object is in space or where 
 </p>
 
 
+<!-- друга формула -->
+
+<div style="text-align: center; margin: 30px 0;">
+    <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #666; margin-bottom: 8px;">
+        Verb sentence Formula
+    </div>
+    <div style="display: inline-block; font-family: 'Georgia', serif; font-size: 22px; letter-spacing: 0.5px; border-top: 1px solid #1A1A1A; border-bottom: 2px solid #1A1A1A; padding: 12px 0;">
+        Subject + Verb
+    </div>
+</div>
+
+<!-- друга формула -->
  <p style="text-align: center; font-size: 50px; color: #1E3A8A;">The page is under development!</p>
 </article>
     <footer>
