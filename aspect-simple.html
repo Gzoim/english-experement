@@ -320,13 +320,18 @@
     text-align: center;
 }
 
-.tense-details .hint {
+.hint {
+    display: block;
+    text-align: center;
     font-family: 'Helvetica Neue', Arial, sans-serif;
     font-size: 8px;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #666;
-    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.tense-column {
+    flex: 0.1 auto;
 }
 
 /* типи речень */
@@ -410,33 +415,35 @@
  Future Simple has two types of sentences (Verb sentence and "To be" sentence)</p><br><br>-->
 
  <div class="tense-row">
-    <details class="tense-details">
-    <summary>
-        <span class="tense-text">
-            Present Simple
-            <span class="hint">sentence types</span>
-        </span>
-    </summary>
-    <p><span style="color: #B8860B;">Verb sentence</span><br><span style="color:#4A6FA5;">Non-verb </span></p>
-</details>
-<details class="tense-details">
-    <summary>
-        <span class="tense-text">
-            Past Simple
-            <span class="hint">sentence types</span>
-        </span>
-    </summary>
-    <p><span style="color: #B8860B;">Verb sentence</span><br><span style="color:#4A6FA5;">Non-verb </span></p>
-</details>
-<details class="tense-details">
-    <summary>
-        <span class="tense-text">
-            Future Simple
-            <span class="hint">sentence types</span>
-        </span>
-    </summary>
-    <p><span style="color: #B8860B;">Verb sentence</span><br><span style="color:#4A6FA5;">Non-verb</span> </p>
-</details>
+    <div class="tense-column">
+        <div class="hint">sentence types</div>
+        <details class="tense-details">
+            <summary>
+                <span class="tense-text">Present Simple</span>
+            </summary>
+            <p><span style="color: #B8860B;">Verb sentence</span><br><span style="color:#4A6FA5;">Non-verb </span></p>
+        </details>
+    </div>
+
+    <div class="tense-column">
+        <div class="hint">sentence types</div>
+        <details class="tense-details">
+            <summary>
+                <span class="tense-text">Past Simple</span>
+            </summary>
+            <p><span style="color: #B8860B;">Verb sentence</span><br><span style="color:#4A6FA5;">Non-verb </span></p>
+        </details>
+    </div>
+
+    <div class="tense-column">
+        <div class="hint">sentence types</div>
+        <details class="tense-details">
+            <summary>
+                <span class="tense-text">Future Simple</span>
+            </summary>
+            <p><span style="color: #B8860B;">Verb sentence</span><br><span style="color:#4A6FA5;">Non-verb</span> </p>
+        </details>
+    </div>
 </div>
 
  <p>Let's separate them into two groups by the type and start from "To be" sentences.<br> 
