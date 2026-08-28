@@ -286,6 +286,14 @@
     right: -200px;
     border-bottom: 2px solid #1A1A1A;
 }
+.tense-details summary::after {
+    content: "▾";
+    font-size: 12px;
+    color: #999;
+}
+.tense-details[open] summary::after {
+    content: "▴";
+}
 }
 /* для широких екранів */
 
@@ -412,13 +420,7 @@
     font-size: 12px;
     color: #999;
 }
-.tense-details summary::after {
-    content: "▾";
-    font-size: 12px;
-    color: #999;
-}
-.tense-details[open] summary::before,
-.tense-details[open] summary::after {
+.tense-details[open] summary::before {
     content: "▴";
 }
 
