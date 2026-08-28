@@ -239,10 +239,7 @@
         margin-right: 180px;
     }
 
-.formula-stamp::after {
-    left: -200px;
-    right: -200px;
-}
+
 }
 /* для широких екранів */
 
@@ -384,24 +381,7 @@
     line-height: 1.8;
     color: #1A1A1A;
 }
-.formula-stamp {
-    display: inline-block;
-    position: relative;
-    font-family: 'Georgia', serif;
-    font-size: 22px;
-    letter-spacing: 0.5px;
-    border-top: 1px solid #1A1A1A;
-    padding: 12px 0;
-    color: #614706;
-}
-.formula-stamp::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: -20px;
-    right: -20px;
-    border-bottom: 2px solid #1A1A1A;
-}
+
 
 /* для формули */
 
@@ -563,7 +543,7 @@
     <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #666; margin-bottom: 8px;">
         Non-verb sentence Formula
     </div>
-   <div class="formula-stamp">
+<div style="display: inline-block; font-family: 'Georgia', serif; font-size: 22px; letter-spacing: 0.5px; border-top: 1px solid #1A1A1A; border-bottom: 2px solid #1A1A1A; padding: 12px 0; color: #614706;">
     Subject + to be + Complement
 </div>
 </div>
