@@ -412,6 +412,41 @@
 
 
 
+.tobe-usage-row {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    margin: 30px 0;
+}
+.tobe-usage-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+.tobe-usage-col-single {
+    justify-content: center;
+}
+.tobe-usage-form {
+    font-family: 'Georgia', serif;
+    font-size: 17px;
+    font-weight: normal;
+    color: #614706;
+}
+.tobe-usage-subj {
+    font-size: 12px;
+    color: #444;
+    border-bottom: 1px solid #ccc;
+}
+
+
+
+
+
 </style>
 <body>
     <header>
@@ -513,14 +548,26 @@
 </div>
 <p>
  
- "To be" Forms for Present tense are: am, is, are.<br>
+ <!--"To be" Forms for Present tense are: am, is, are.<br>
  "To be" Forms for Past tense are: was, were.<br>
- "To be" Form for Future tense is: will be.<br>
-
- So when we need to make a Present tense sentence, we use am, is or are instead of "To be". <br>
- When we need to make a Past tense we use was, were instead of "To be". <br>
- When we need to make a Future tense we use will be instead of "To be". <br>
- Next, we need to know is that the "To be" forms use depends on Subdject (I, you, we, they, he, she, it).<br>
+ "To be" Form for Future tense is: will be.<br>-->
+ Choose the correct "to be" form depending on which tense the sentence needs to be.
+ <br>
+ But if we want to make a Present tense sentence, there are three different "to be" forms: am, is, are. So how do we know which one to choose? <br> It depends on the Subject (I, you, we, they, he, she, it).<br>
+ <div class="tobe-usage-row">
+    <div class="tobe-usage-col">
+        <div><div class="tobe-usage-form">am</div><div class="tobe-usage-subj">I</div></div>
+        <div><div class="tobe-usage-form">is</div><div class="tobe-usage-subj">he · she · it</div></div>
+        <div><div class="tobe-usage-form">are</div><div class="tobe-usage-subj">you · we · they</div></div>
+    </div>
+    <div class="tobe-usage-col">
+        <div><div class="tobe-usage-form">was</div><div class="tobe-usage-subj">I · he · she · it</div></div>
+        <div><div class="tobe-usage-form">were</div><div class="tobe-usage-subj">you · we · they</div></div>
+    </div>
+    <div class="tobe-usage-col">
+        <div><div class="tobe-usage-form">will be</div><div class="tobe-usage-subj">I · he · she · it · you · we · they</div></div>
+    </div>
+</div>
 </p>
 <p>
  Present "To be" forms: <br>
