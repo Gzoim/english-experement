@@ -215,6 +215,42 @@
 
 
 
+/* для формути */
+
+.formula {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: #666;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+.examples {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #1A1A1A;
+}
+
+.formula-stamp {
+    display: inline-block;
+    position: relative;
+    font-family: 'Georgia', serif;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    border-top: 1px solid #1A1A1A;
+    border-bottom: 2px solid #1A1A1A;
+    padding: 12px 0;
+    color: #614706;
+}
+/* для формули */
+
+
+
+
+
+
+
 /* для широких екранів */
 @media (min-width: 769px) { 
     .side-toggle-btn {
@@ -239,7 +275,17 @@
         margin-right: 180px;
     }
 
-
+.formula-stamp {
+    border-bottom: none;
+}
+.formula-stamp::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -200px;
+    right: -200px;
+    border-bottom: 2px solid #1A1A1A;
+}
 }
 /* для широких екранів */
 
@@ -365,25 +411,7 @@
 
 
 
-/* для формути */
 
-.formula {
-    font-family: 'Georgia', serif;
-    font-style: italic;
-    font-size: 13px;
-    color: #666;
-    margin-top: 15px;
-    margin-bottom: 8px;
-}
-
-.examples {
-    font-size: 13px;
-    line-height: 1.8;
-    color: #1A1A1A;
-}
-
-
-/* для формули */
 
 
 
@@ -543,7 +571,7 @@
     <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #666; margin-bottom: 8px;">
         Non-verb sentence Formula
     </div>
-<div style="display: inline-block; font-family: 'Georgia', serif; font-size: 22px; letter-spacing: 0.5px; border-top: 1px solid #1A1A1A; border-bottom: 2px solid #1A1A1A; padding: 12px 0; color: #614706;">
+<div class="formula-stamp">
     Subject + to be + Complement
 </div>
 </div>
