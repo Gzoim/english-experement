@@ -46,7 +46,7 @@
 
 
 
-         /* кнопка на головну сторінку */
+ /* кнопка на головну сторінку */
 .btn-back {
     display: inline-block;
     position: fixed;
@@ -102,7 +102,7 @@
     top: 35px; }
 
 .verbs-toggle-btn:hover {
-    background-color: #0F2157; /* Наш фірмовий синій */
+    background-color: #0F2157; 
 }
 /* Кнопки-закладка, яка завжди прикріплена праворуч */
 
@@ -215,8 +215,9 @@
 
 
 
-/* для формути */
 
+
+/* для формути */
 .formula {
     font-family: 'Georgia', serif;
     font-style: italic;
@@ -437,7 +438,6 @@
     content: "▴";
 }
 
-
 /* типи речень */
 
 
@@ -446,14 +446,7 @@
 
 
 
-
-
-
-
-
-
-
-
+/*ту бі*/
 
 .tobe-forms-row {
     display: flex;
@@ -484,15 +477,14 @@
     padding: 8px 0;
 }
 
+/*ту бі*/
 
 
 
 
 
 
-
-
-
+/*сабджекти*/
 
 .tobe-usage-row {
     display: flex;
@@ -529,8 +521,7 @@
     border-bottom: 1px solid #ccc;
 }
 
-
-
+/*сабджекти*/
 
 
 
@@ -538,7 +529,6 @@
 
 
 /*інтерактивна табличка*/
-
 
 .subj-switch-row {
     display: flex;
@@ -672,29 +662,34 @@
 
 
 </style>
-<body>
-    <header>
-     <div class="issue">Simple aspect</div>
-    </header>
 
-        <a href="index.html" class="btn-back">«</a>
+<body>
+
+<header>
+ <div class="issue">Simple aspect</div>
+</header>
+
+    <a href="index.html" class="btn-back">«</a>
 
 
 <article>
     
  <h1>How to understand the Simple Aspect? </h1>
- <p>First, we need to know that the Simple aspect has two types of sentences:</p>
+ <p>
+  First, we need to know that the Simple aspect has two types of sentences:
+ </p>
 
 <div class="sentence-type type-verb">
     <div class="sentence-type-summary" onclick="toggleSentenceType(this)">
         <span style="color:#2E4466;">Verb sentence</span>
-        <div class="sentence-type-alt">also called Action sentence</div>
+         <div class="sentence-type-alt">also called Action sentence</div>
     </div>
     <div class="sentence-type-body"><div>
         <p>Action sentence (or Verb sentence) stands for sentences which contain a verb. <br>If there is a verb, the sentence automatically describes a physical (e.g., walk) or mental (e.g., know) action.<br>
-        Formula: <strong>Subject + Verb</strong></p>
+               Formula: <strong>Subject + Verb</strong></p>
     </div></div>
 </div>
+
 <div class="sentence-type type-nonverb">
     <div class="sentence-type-summary" onclick="toggleSentenceType(this)">
         <span style="color:#614706">Non-verb sentence</span>
@@ -706,26 +701,31 @@
     </div></div>
 </div>
 
-   <!-- <p>First type - Action sentence or Verb sentence.<br>
+   <!-- <p>
+   First type - Action sentence or Verb sentence.<br>
     Second type - Non-verb sentences or "To be" sentence.<br>
     Why do we name these two types like that?  <br>
     Action sentence (or Verb sentence) stands for sentences which contain a verb. If there is a verb, so the sentence automatically discribes a physical (e.g., walk) or mental (e.g., know) action.<br>
     Non-verb sentence (or "To be" sentences) stands for sentences where there is no verb, so there is no action. These sentences just describe information about someone or  something (e.g., small, tall, happy, sad, cold...)<br>
 
- So here are the formulas.<br>
- Verb sentence: Subject + Verb  <br>
- "To be" sentence: Subject + To be + Complement.<br>
-</p>-->
+    So here are the formulas.<br>
+    Verb sentence: Subject + Verb  <br>
+    "To be" sentence: Subject + To be + Complement.<br>
+    </p>-->
 
-<p>
- Next, what we need to know is that there are three tenses: Present, Past and Future, and each has a Simple aspect. So we have Present Simple, Past Simple and Future Simple, and each has two types of sentences.<br> 
- <!--<br>So, what do we have now? <br>
- Present Simple has two types of sentences (Verb sentence and "To be" sentence)<br>
- Past Simple has two types of sentences (Verb sentence and "To be" sentence)<br>
- Future Simple has two types of sentences (Verb sentence and "To be" sentence)</p><br><br>-->
+    <p>
+      Next, what we need to know is that there are three tenses: Present, Past and Future, and each has a Simple aspect. So we have Present Simple, Past Simple and Future Simple, and each has two types of sentences.
+    </p><br> 
+    <!--<p><br>
+    So, what do we have now? <br>
+    Present Simple has two types of sentences (Verb sentence and "To be" sentence)<br>
+    Past Simple has two types of sentences (Verb sentence and "To be" sentence)<br>
+    Future Simple has two types of sentences (Verb sentence and "To be" sentence)
+    </p><br><br>-->
 
- <div class="hint">sentence types</div>
-<div class="tense-row">
+<div class="hint">sentence types</div>
+
+    <div class="tense-row">
     <div class="tense-details">
         <div class="tense-summary" onclick="toggleAllTenseDetails()">
             <span class="tense-text">Present Simple</span>
@@ -734,6 +734,7 @@
             <p><span style="color: #2E4466;">Verb sentence</span><br><span style="color:#614706;">Non-verb </span></p>
         </div></div>
     </div>
+
     <div class="tense-details">
         <div class="tense-summary" onclick="toggleAllTenseDetails()">
             <span class="tense-text">Past Simple</span>
@@ -750,49 +751,60 @@
             <p><span style="color: #2E4466;">Verb sentence</span><br><span style="color:#614706;">Non-verb</span> </p>
         </div></div>
     </div>
+
 </div>
 
- <p>Let's separate them into two groups by the type and start from "To be" sentences.
-    Present, Past and Future non-verb sentence in Simple aspect share the exact same formula:<br>
-   <div style="text-align: center; margin: 30px 0;">
-    <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #666; margin-bottom: 8px;">
-        Non-verb sentence Formula
-    </div>
-<div class="formula-stamp">
-    Subject + to be + Complement
+    <p>
+    Let's separate them into two groups by the type and start from "To be" sentences.
+    Present, Past and Future non-verb sentence in Simple aspect share the exact same formula:
+    </p><br>
+
+<div style="text-align: center; margin: 30px 0;">
+
+    <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #666; margin-bottom: 8px;"> Non-verb sentence Formula</div>
+
+    <div class="formula-stamp"> Subject + to be + Complement </div>
+
 </div>
-</div>
 
+    <p>
+     But if they have the same formula, how do we know what tense it is? There is something that really helps us: it is different "To be" forms for each tense. Look for them on the right side of page, in the Help Verbs section.<br>
+     How does it work? Let's have a look at these "To be" forms!<br>
+    </p>
 
-
-
-
-  But if they have the same formula, how do we know what tense it is? There is something that really helps us: it is different "To be" forms for each tense. Look for them on the right side of page, in the Help Verbs section.<br>
-  How does it work? Let's have a look at these "To be" forms!<br>
-</p>
 <div class="tobe-forms-row">
+
     <div class="tobe-forms-col">
         <div class="tobe-forms-title">Present</div>
         <div class="tobe-forms-box">am / is / are</div>
     </div>
+
     <div class="tobe-forms-col">
         <div class="tobe-forms-title">Past</div>
         <div class="tobe-forms-box">was / were</div>
     </div>
+
     <div class="tobe-forms-col">
         <div class="tobe-forms-title">Future</div>
         <div class="tobe-forms-box">will be</div>
     </div>
+
 </div>
-<p>
- 
- <!--"To be" Forms for Present tense are: am, is, are.<br>
+
+ <!--<p>
+ "To be" Forms for Present tense are: am, is, are.<br>
  "To be" Forms for Past tense are: was, were.<br>
- "To be" Form for Future tense is: will be.<br>-->
- Choose the correct "to be" form depending on which tense the sentence needs to be.
- <br>
- But if we want to make a Present tense sentence, there are three different "to be" forms: am, is, are. So how do we know which one to choose? <br> And it depends on the Subject.<br>
- <div class="tobe-usage-row">
+ "To be" Form for Future tense is: will be.
+ </p><br>-->
+
+    <p>
+      Choose the correct "to be" form depending on which tense the sentence needs to be.
+    </p><br>
+
+    <p>
+     But if we want to make a Present tense sentence, there are three different "to be" forms: am, is, are. So how do we know which one to choose? <br> And it depends on the Subject.<br>
+    </p>   
+<div class="tobe-usage-row">
     <div class="tobe-usage-card">
         <div class="tobe-usage-col">
             <div><div class="tobe-usage-form">am</div><div class="tobe-usage-subj">I</div></div>
@@ -812,24 +824,26 @@
         </div>
     </div>
 </div>
-</p>
-<p>
- <!--Present "To be" forms: <br>
- use am for I (I am happy) <br>
- use is for he, she, it (She is happy) <br>
- use are for you, we, they  (We are happy)<br><br>
- Past "To be" forms: <br>
- use was for I, he, she, it (I was happy) <br>
- use were for you, we, they (We were happy)<br><br>
- Future "To be" form: <br>
- use will be for I, he, she, it, you, we, they (I will be happy)<br>
-</p>-->
-<p>
- <!--So again, the formula for Simple acpect of "To be" sentences is Subject + To be + Complement.<br>
- We can choose any subject we need, than add the correct "To be" form for that subject.-->
- If we want to say "She", then the "To be" form can be: is for present, was for past or will be for future.<br>
 
- <div class="subj-switch-row" id="subjSwitch">
+    <!--<p>
+     Present "To be" forms: <br>
+     use am for I (I am happy) <br>
+     use is for he, she, it (She is happy) <br>
+     use are for you, we, they  (We are happy)<br><br>
+     Past "To be" forms: <br>
+     use was for I, he, she, it (I was happy) <br>
+     use were for you, we, they (We were happy)<br><br>
+     Future "To be" form: <br>
+     use will be for I, he, she, it, you, we, they (I will be happy)<br>
+     So again, the formula for Simple acpect of "To be" sentences is Subject + To be + Complement.<br>
+     We can choose any subject we need, than add the correct "To be" form for that subject.
+    </p>-->
+
+    <p>
+     If we want to say "She", then the "To be" form can be: is for present, was for past or will be for future.
+    </p><br>
+
+<div class="subj-switch-row" id="subjSwitch">
     <div class="subj-switch-col">
         <div class="subj-switch-sentence" id="subjSent0"></div>
         <div class="pill-row" data-col="0">
@@ -855,9 +869,11 @@
         </div>
     </div>
 </div>
-  What is a complement? A complement describes information about the subject.<br>
- If we dig deep into the complement we will find the limits of "To be" sentences! Everything a "To be" sentence can describe comes from the complement. There is nothing more in this world that can be described in "To be" sentences -- only what the complement includes! <br>
-</p>
+
+    <p> 
+     What is a complement? A complement describes information about the subject.<br>
+     If we dig deep into the complement we will find the limits of "To be" sentences! Everything a "To be" sentence can describe comes from the complement. There is nothing more in this world that can be described in "To be" sentences -- only what the complement includes! <br>
+    </p>
 
 
 
@@ -865,7 +881,7 @@
 <div class="complement-sub">10 categories of complement</div>
 <div id="complementCards"></div>
 
- <!--All Types of Subject Complements:<br>
+ <!-- <p>All Types of Subject Complements:<br>
 Profession - It tells us subject's occupation, job or career. (He is a teacher. Developer, Designer, Copywriter, Blogger...) <br>
 Status - It is the person's life role in a society or in a family. (She is a mother. Student, Friend, Single, Member, Winner...)<br>
 Characteristic - It describes a permanent quality or personality trait that doesn't change easily. Describer what this object is by its nature. (The car is fast. Tall, Young, Smart, Red, Flat...)<br>
@@ -875,9 +891,11 @@ Possession - It tells us who owns an object. (This key is mine. The house is the
 Age - It tells us how many years someone or something has existed. (He is twenty. The building is very old, New, Ancient...) <br>
 Time - It tells us the hour, the part of the day, the day of the week. (It is five o'clock. Today is Monday, Summer, Late, Time to go...)<br>
 Number - It shows any mathematical number, score or digit. (The score is three-to-one. My favorite number is eight, The first, The last...)<br>
-Location - It tells us exactly where a person or an object is in space or where it is from. (We are at home. The cat is under the table, From Ukraine, In the world, Online...)<br>-->
+Location - It tells us exactly where a person or an object is in space or where it is from. (We are at home. The cat is under the table, From Ukraine, In the world, Online...)</p><br>-->
 
-</p>
+
+
+
 
 
 <!-- друга формула -->
@@ -892,7 +910,7 @@ Location - It tells us exactly where a person or an object is in space or where 
 </div>
 
 <!-- друга формула -->
- <p style="text-align: center; font-size: 50px; color: #1E3A8A;">The page is under development!</p>
+    <p style="text-align: center; font-size: 50px; color: #1E3A8A;">The page is under development!</p>
 </article>
     <footer>
     <p>© 2026 Gzoim</p>
@@ -1078,27 +1096,37 @@ Location - It tells us exactly where a person or an object is in space or where 
 
 
 <script>
-  function toggleSidebar(id) {
-        const sidebar = document.getElementById(id);
-        const isOpen = sidebar.classList.contains('open');
-        document.querySelectorAll('.side-panel').forEach(panel => {
-            panel.classList.remove('open');
-        });
-        if (!isOpen) {
-            sidebar.classList.add('open');
-        }
+/* ===== Бокова панель (кнопки Irr Verbs / Help Verbs праворуч) ===== */
+function toggleSidebar(id) {
+    const sidebar = document.getElementById(id);
+    const isOpen = sidebar.classList.contains('open');
+    document.querySelectorAll('.side-panel').forEach(panel => {
+        panel.classList.remove('open');
+    });
+    if (!isOpen) {
+        sidebar.classList.add('open');
     }
+}
+/* ===== Бокова панель закінчується тут ===== */
 
-  function toggleAllTenseDetails() {
+
+/* ===== Present/Past/Future (три часи, розкриваються всі разом) ===== */
+function toggleAllTenseDetails() {
     const allDetails = document.querySelectorAll('.tense-details');
     const isOpen = allDetails[0].classList.contains('open');
     allDetails.forEach(d => d.classList.toggle('open', !isOpen));
 }
+/* ===== Present/Past/Future закінчується тут ===== */
 
+
+/* ===== Verb sentence / Non-verb sentence (розкриваються незалежно одне від одного) ===== */
 function toggleSentenceType(el) {
     el.parentElement.classList.toggle('open');
 }
+/* ===== Verb sentence / Non-verb sentence закінчується тут ===== */
 
+
+/* ===== Перемикач підмета "to be" (пігулки I / He-She-It / You-We-They) ===== */
 const subjSwitchData = [
     { text: "I",    present: "am",  past: "was",  future: "will be" },
     { text: "She",  present: "is",  past: "was",  future: "will be" },
@@ -1107,11 +1135,14 @@ const subjSwitchData = [
 const subjSwitchComplement = "tired";
 const subjSwitchTenseKeys = ["present", "past", "future"];
 
+// малює речення в одній колонці (без анімації - викликається і при завантаженні сторінки)
 function renderSubjSwitchCell(col, subjectIndex) {
     const s = subjSwitchData[subjectIndex];
     const form = s[subjSwitchTenseKeys[col]];
     document.getElementById("subjSent" + col).innerHTML = `${s.text} <span class="tobe-hl">${form}</span> ${subjSwitchComplement}.`;
 }
+
+// те саме, але плавно (opacity 0 -> перемалювати -> opacity 1) - викликається при кліку на пігулку
 function updateSubjSwitchCell(col, subjectIndex) {
     const el = document.getElementById("subjSent" + col);
     el.style.opacity = 0;
@@ -1121,6 +1152,7 @@ function updateSubjSwitchCell(col, subjectIndex) {
     }, 200);
 }
 
+// початкова відмалювання всіх трьох колонок + навішування кліків на пігулки
 for (let col = 0; col < 3; col++) {
     renderSubjSwitchCell(col, 0);
     const pillRow = document.querySelector(`#subjSwitch .pill-row[data-col="${col}"]`);
@@ -1132,10 +1164,10 @@ for (let col = 0; col < 3; col++) {
         });
     });
 }
+/* ===== Перемикач підмета "to be" закінчується тут ===== */
 
 
-
-
+/* ===== Complement (поступове розкриття 10 категорій) ===== */
 const complementCategories = [
     { name: "Profession", text: "It tells us subject's occupation, job or career. (He is a teacher. Developer, Designer, Copywriter, Blogger...)" },
     { name: "Status", text: "It is the person's life role in a society or in a family. (She is a mother. Student, Friend, Single, Member, Winner...)" },
@@ -1148,19 +1180,17 @@ const complementCategories = [
     { name: "Number", text: "It shows any mathematical number, score or digit. (The score is three-to-one. My favorite number is eight, The first, The last...)" },
     { name: "Location", text: "It tells us exactly where a person or an object is in space or where it is from. (We are at home. The cat is under the table, From Ukraine, In the world, Online...)" }
 ];
-
 let complementShownCount = 0;
 const complementContainer = document.getElementById("complementCards");
 const complementOpenerEl = document.getElementById("complementOpener");
 
+// малює підказку "next" (якщо є ще категорії) або "close" (якщо показані всі 10)
 function renderComplementHint() {
     const oldHint = document.getElementById("complementNextHint");
     if (oldHint) oldHint.remove();
-
     const hint = document.createElement("div");
     hint.className = "next-hint";
     hint.id = "complementNextHint";
-
     if (complementShownCount < complementCategories.length) {
         hint.innerHTML = `<span id="hintNext">▾ next</span>`;
         complementContainer.appendChild(hint);
@@ -1172,39 +1202,37 @@ function renderComplementHint() {
     }
 }
 
+// додає наступну картку-категорію, плавно (0.5с) її розкриваючи
 function showNextComplement() {
     if (complementShownCount >= complementCategories.length) return;
     const cat = complementCategories[complementShownCount];
-
     const wrap = document.createElement("div");
     wrap.className = "comp-card-wrap";
     wrap.innerHTML = `<div><div class="comp-card"><b>${cat.name}</b> - ${cat.text}</div></div>`;
     complementContainer.appendChild(wrap);
-
     requestAnimationFrame(() => {
         requestAnimationFrame(() => {
             wrap.classList.add("open");
         });
     });
-
     complementShownCount++;
     renderComplementHint();
 }
 
+// плавно згортає усі показані картки, а тоді (через 0.5с) прибирає їх зі сторінки
 function closeComplement() {
     complementOpenerEl.classList.remove("open");
     const wraps = complementContainer.querySelectorAll(".comp-card-wrap");
     wraps.forEach(w => w.classList.remove("open"));
-
     const hint = document.getElementById("complementNextHint");
     if (hint) hint.remove();
-
     setTimeout(function() {
         complementContainer.innerHTML = "";
         complementShownCount = 0;
     }, 500);
 }
 
+// клік по назві "Complement": перша картка / закрити все
 complementOpenerEl.addEventListener("click", function() {
     if (complementShownCount === 0) {
         showNextComplement();
@@ -1213,7 +1241,7 @@ complementOpenerEl.addEventListener("click", function() {
         closeComplement();
     }
 });
-
+/* ===== Complement закінчується тут ===== */
 </script>
 
 </body>
