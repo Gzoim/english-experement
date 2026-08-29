@@ -142,7 +142,7 @@
     background-color: #F5F4F0;
     box-shadow: -5px 0 25px rgba(0,0,0,0.05);
     z-index: 999;
-    transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: right 0.5s cubic-bezier(0.25, 1, 0.5, 1);
     padding: 40px 25px;
     box-sizing: border-box;
     overflow-y: auto;
@@ -595,6 +595,9 @@
 
 
 
+
+/*комплемент*/
+
 .complement-opener {
     display: flex;
     align-items: center;
@@ -621,6 +624,17 @@
     padding: 16px 18px;
     margin-bottom: 10px;
     font-size: 14px;
+}
+.comp-card-wrap {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s ease;
+}
+.comp-card-wrap > div {
+    overflow: hidden;
+}
+.comp-card-wrap.open {
+    grid-template-rows: 1fr;
 }
 .comp-card b {
     color: #614706;
@@ -653,7 +667,7 @@
     padding-bottom: 6px;
 }
 
-
+/*комплемент*/
 
 
 
@@ -1161,10 +1175,18 @@ function renderComplementHint() {
 function showNextComplement() {
     if (complementShownCount >= complementCategories.length) return;
     const cat = complementCategories[complementShownCount];
-    const card = document.createElement("div");
-    card.className = "comp-card";
-    card.innerHTML = `<b>${cat.name}</b> - ${cat.text}`;
-    complementContainer.appendChild(card);
+
+    const wrap = document.createElement("div");
+    wrap.className = "comp-card-wrap";
+    wrap.innerHTML = `<div><div class="comp-card"><b>${cat.name}</b> - ${cat.text}</div></div>`;
+    complementContainer.appendChild(wrap);
+
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            wrap.classList.add("open");
+        });
+    });
+
     complementShownCount++;
     renderComplementHint();
 }
