@@ -309,34 +309,40 @@
     padding: 12px 0;
 
 }
-.sentence-type summary {
+.sentence-type-summary {
     cursor: pointer;
-    font-weight: /*bold*/;
     font-size: 18px;
     font-family: 'Georgia', serif;
-    list-style: none;
     position: relative;
     padding-left: 20px;
 }
-.sentence-type summary::-webkit-details-marker {
-    display: none;
-}
-.sentence-type summary::before {
+.sentence-type-summary::before {
     content: "▾";
     position: absolute;
     left: 0;
     color: #1A1A1A;
 }
-.sentence-type[open] summary::before {
+.sentence-type.open .sentence-type-summary::before {
     content: "▴";
 }
-.type-verb summary::before {
+.type-verb .sentence-type-summary::before {
     color: #243650;
 }
-.type-nonverb summary::before {
+.type-nonverb .sentence-type-summary::before {
     color: #453204;
 }
-.sentence-type p {
+.sentence-type-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s ease;
+}
+.sentence-type-body > div {
+    overflow: hidden;
+}
+.sentence-type.open .sentence-type-body {
+    grid-template-rows: 1fr;
+}
+.sentence-type-body p {
     margin: 10px 0 0 20px;
 }
 .sentence-type-alt {
@@ -665,22 +671,26 @@
  <h1>How to understand the Simple Aspect? </h1>
  <p>First, we need to know that the Simple aspect has two types of sentences:</p>
 
-   <details class="sentence-type type-verb">
-    <summary>
+<div class="sentence-type type-verb">
+    <div class="sentence-type-summary" onclick="toggleSentenceType(this)">
         <span style="color:#2E4466;">Verb sentence</span>
         <div class="sentence-type-alt">also called Action sentence</div>
-    </summary>
-    <p>Action sentence (or Verb sentence) stands for sentences which contain a verb. <br>If there is a verb, the sentence automatically describes a physical (e.g., walk) or mental (e.g., know) action.<br>
-    Formula: <strong>Subject + Verb</strong></p>
-</details>
-<details class="sentence-type type-nonverb">
-    <summary>
+    </div>
+    <div class="sentence-type-body"><div>
+        <p>Action sentence (or Verb sentence) stands for sentences which contain a verb. <br>If there is a verb, the sentence automatically describes a physical (e.g., walk) or mental (e.g., know) action.<br>
+        Formula: <strong>Subject + Verb</strong></p>
+    </div></div>
+</div>
+<div class="sentence-type type-nonverb">
+    <div class="sentence-type-summary" onclick="toggleSentenceType(this)">
         <span style="color:#614706">Non-verb sentence</span>
         <div class="sentence-type-alt">also called "To be" sentence</div>
-    </summary>
-    <p>Non-verb sentence (or "To be" sentence) stands for sentences where there is no verb, so there is no action.<br> These sentences just describe information about someone or something (e.g., small, tall, happy, sad, cold...).<br>
-    Formula: <strong>Subject + To be + Complement</strong></p>
-</details>
+    </div>
+    <div class="sentence-type-body"><div>
+        <p>Non-verb sentence (or "To be" sentence) stands for sentences where there is no verb, so there is no action.<br> These sentences just describe information about someone or something (e.g., small, tall, happy, sad, cold...).<br>
+        Formula: <strong>Subject + To be + Complement</strong></p>
+    </div></div>
+</div>
 
    <!-- <p>First type - Action sentence or Verb sentence.<br>
     Second type - Non-verb sentences or "To be" sentence.<br>
@@ -1071,7 +1081,9 @@ Location - It tells us exactly where a person or an object is in space or where 
     allDetails.forEach(d => d.classList.toggle('open', !isOpen));
 }
 
-
+function toggleSentenceType(el) {
+    el.parentElement.classList.toggle('open');
+}
 
 const subjSwitchData = [
     { text: "I",    present: "am",  past: "was",  future: "will be" },
