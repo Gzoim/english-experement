@@ -100,7 +100,6 @@
     top: 130px; }
 .tobe-toggle-btn {
     top: 35px; }
-
 .verbs-toggle-btn:hover {
     background-color: #0F2157; 
 }
@@ -169,21 +168,17 @@
     border-radius: 6px;
     margin-bottom: 30px;
 }
-
 .tobe-block {
     background-color: rgba(97, 71, 6, 0.08);
     border-left: 3px solid #614706;
 }
-
 .tobe-block .sidebar-title {
     color: #614706;
 }
-
 .aux-block {
     background-color: rgba(46, 68, 102, 0.08);
     border-left: 3px solid #2E4466;
 }
-
 .aux-block .sidebar-title {
     color: #2E4466;
 }
@@ -197,13 +192,11 @@
     border-collapse: collapse;
     font-size: 14px;
 }
-
 .verbs-table th, .verbs-table td {
     padding: 10px 5px;
     text-align: left;
     border-bottom: 1px solid #E0E0E0;
 }
-
 .verbs-table th {
     font-family: 'Georgia', serif;
     font-style: italic;
@@ -226,13 +219,11 @@
     margin-top: 15px;
     margin-bottom: 8px;
 }
-
 .examples {
     font-size: 13px;
     line-height: 1.8;
     color: #1A1A1A;
 }
-
 .formula-stamp {
     display: inline-block;
     position: relative;
@@ -275,7 +266,6 @@
         margin-left: 180px;
         margin-right: 180px;
     }
-
 .formula-stamp {
     border-bottom: none;
 }
@@ -308,7 +298,6 @@
 .sentence-type {
     border-bottom: 1px dashed #E0E0E0;
     padding: 12px 0;
-
 }
 .sentence-type-summary {
     cursor: pointer;
@@ -416,7 +405,6 @@
     padding-bottom: 5px;
     border-bottom: 1px solid #1A1A1A;
 }
-
 .hint {
     display: block;
     text-align: center;
@@ -1169,12 +1157,12 @@ for (let col = 0; col < 3; col++) {
 
 /* ===== Complement (поступове розкриття 10 категорій) ===== */
 const complementCategories = [
-    { name: "Profession", text: "It tells us subject's occupation, job or career. (He is a teacher. Developer, Designer, Copywriter, Blogger...)" },
+    { name: "Profession", text: "tells us subject's occupation, job or career. (He is a teacher. Developer, Designer, Copywriter, Blogger...)" },
     { name: "Status", text: "It is the person's life role in a society or in a family. (She is a mother. Student, Friend, Single, Member, Winner...)" },
     { name: "Characteristic", text: "It describes a permanent quality or personality trait that doesn't change easily. It describes what this object is by its nature. (The car is fast. Tall, Young, Smart, Red, Flat...)" },
     { name: "State", text: "It describes a temporary physical or emotional feelings right now. It can be changed quickly. (I am tired. Hungry, Happy, Confused, Ready, Broken, Cold, Busy...)" },
     { name: "Identity", text: "It points at someone or something to tell us exactly who or what they are. (It is John. That is Ukraine, Kyiv, Me, The boss, The key...)" },
-    { name: "Possession", text: "It tells us who owns an object. (This key is mine. The house is theirs, Yours, His, Hers, Ours, John's, Mary's...)" },
+    { name: "Ownership", text: "It tells us who owns an object. (This key is mine. The house is theirs, Yours, His, Hers, Ours, John's, Mary's...)" },
     { name: "Age", text: "It tells us how many years someone or something has existed. (He is twenty. The building is very old, New, Ancient...)" },
     { name: "Time", text: "It tells us the hour, the part of the day, the day of the week. (It is five o'clock. Today is Monday, Summer, Late, Time to go...)" },
     { name: "Number", text: "It shows any mathematical number, score or digit. (The score is three-to-one. My favorite number is eight, The first, The last...)" },
@@ -1196,7 +1184,7 @@ function renderComplementHint() {
         complementContainer.appendChild(hint);
         document.getElementById("hintNext").addEventListener("click", showNextComplement);
     } else {
-        hint.innerHTML = `<span id="hintClose">▴ close</span>`;
+        hint.innerHTML = `<span id="hintClose">▴ collapse</span>`;
         complementContainer.appendChild(hint);
         document.getElementById("hintClose").addEventListener("click", closeComplement);
     }
