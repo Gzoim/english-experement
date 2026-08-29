@@ -286,12 +286,12 @@
     right: -200px;
     border-bottom: 2px solid #1A1A1A;
 }
-.tense-details summary::after {
+.tense-summary::after {
     content: "▾";
     font-size: 12px;
     color: #999;
 }
-.tense-details[open] summary::after {
+.tense-details.open .tense-summary::after {
     content: "▴";
 }
 }
@@ -374,22 +374,29 @@
     flex: 0.1 auto;
     padding-top: 10px;
 }
-.tense-details summary::-webkit-details-marker {
-    display: none;
-}
 .tense-details p {
     margin-top: 10px;
     text-align: center;
     font-size: 12px;
 }
-.tense-details summary {
+.tense-summary {
     cursor: pointer;
-    list-style: none;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 12px;
+}
+.tense-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s ease;
+}
+.tense-body > div {
+    overflow: hidden;
+}
+.tense-details.open .tense-body {
+    grid-template-rows: 1fr;
 }
 .tense-text {
     display: inline-flex;
@@ -415,12 +422,12 @@
     margin-bottom: 4px;
     border-bottom: 2px solid #1A1A1A;
 }
-.tense-details summary::before {
+.tense-summary::before {
     content: "▾";
     font-size: 12px;
     color: #999;
 }
-.tense-details[open] summary::before {
+.tense-details.open .tense-summary::before {
     content: "▴";
 }
 
@@ -695,26 +702,30 @@
 
  <div class="hint">sentence types</div>
 <div class="tense-row">
-    <details class="tense-details">
-        <summary>
+    <div class="tense-details">
+        <div class="tense-summary" onclick="toggleAllTenseDetails()">
             <span class="tense-text">Present Simple</span>
-        </summary>
-        <p><span style="color: #2E4466;">Verb sentence</span><br><span style="color:#614706;">Non-verb </span></p>
-    </details>
-
-    <details class="tense-details">
-        <summary>
+        </div>
+        <div class="tense-body"><div>
+            <p><span style="color: #2E4466;">Verb sentence</span><br><span style="color:#614706;">Non-verb </span></p>
+        </div></div>
+    </div>
+    <div class="tense-details">
+        <div class="tense-summary" onclick="toggleAllTenseDetails()">
             <span class="tense-text">Past Simple</span>
-        </summary>
-        <p><span style="color: #2E4466;">Verb sentence</span><br><span style="color:#614706;">Non-verb </span></p>
-    </details>
-
-    <details class="tense-details">
-        <summary>
+        </div>
+        <div class="tense-body"><div>
+            <p><span style="color: #2E4466;">Verb sentence</span><br><span style="color:#614706;">Non-verb </span></p>
+        </div></div>
+    </div>
+    <div class="tense-details">
+        <div class="tense-summary" onclick="toggleAllTenseDetails()">
             <span class="tense-text">Future Simple</span>
-        </summary>
-        <p><span style="color: #2E4466;">Verb sentence</span><br><span style="color:#614706;">Non-verb</span> </p>
-    </details>
+        </div>
+        <div class="tense-body"><div>
+            <p><span style="color: #2E4466;">Verb sentence</span><br><span style="color:#614706;">Non-verb</span> </p>
+        </div></div>
+    </div>
 </div>
 
  <p>Let's separate them into two groups by the type and start from "To be" sentences.
@@ -1054,14 +1065,13 @@ Location - It tells us exactly where a person or an object is in space or where 
         }
     }
 
-  document.querySelectorAll('.tense-details summary').forEach(summary => {
-        summary.addEventListener('click', function(e) {
-            e.preventDefault();
-            const allDetails = document.querySelectorAll('.tense-details');
-            const isOpen = allDetails[0].open;
-            allDetails.forEach(d => d.open = !isOpen);
-        });
-    });
+  function toggleAllTenseDetails() {
+    const allDetails = document.querySelectorAll('.tense-details');
+    const isOpen = allDetails[0].classList.contains('open');
+    allDetails.forEach(d => d.classList.toggle('open', !isOpen));
+}
+
+
 
 const subjSwitchData = [
     { text: "I",    present: "am",  past: "was",  future: "will be" },
