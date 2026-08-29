@@ -548,6 +548,7 @@
     font-family: 'Georgia', serif;
     font-size: 17px;
     min-height: 24px;
+    transition: opacity 0.5s ease; /* швидкість перемикання тообііі форми */
 }
 .subj-switch-sentence .tobe-hl {
     color: #453204;
@@ -1075,6 +1076,14 @@ function renderSubjSwitchCell(col, subjectIndex) {
     const form = s[subjSwitchTenseKeys[col]];
     document.getElementById("subjSent" + col).innerHTML = `${s.text} <span class="tobe-hl">${form}</span> ${subjSwitchComplement}.`;
 }
+function updateSubjSwitchCell(col, subjectIndex) {
+    const el = document.getElementById("subjSent" + col);
+    el.style.opacity = 0;
+    setTimeout(function() {
+        renderSubjSwitchCell(col, subjectIndex);
+        el.style.opacity = 1;
+    }, 200);
+}
 
 for (let col = 0; col < 3; col++) {
     renderSubjSwitchCell(col, 0);
@@ -1083,7 +1092,7 @@ for (let col = 0; col < 3; col++) {
         btn.addEventListener("click", function() {
             pillRow.querySelectorAll(".pill").forEach(p => p.classList.remove("active"));
             this.classList.add("active");
-            renderSubjSwitchCell(col, parseInt(this.dataset.i));
+            updateSubjSwitchCell(col, parseInt(this.dataset.i));
         });
     });
 }
