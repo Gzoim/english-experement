@@ -1192,9 +1192,17 @@ function showNextComplement() {
 }
 
 function closeComplement() {
-    complementContainer.innerHTML = "";
-    complementShownCount = 0;
     complementOpenerEl.classList.remove("open");
+    const wraps = complementContainer.querySelectorAll(".comp-card-wrap");
+    wraps.forEach(w => w.classList.remove("open"));
+
+    const hint = document.getElementById("complementNextHint");
+    if (hint) hint.remove();
+
+    setTimeout(function() {
+        complementContainer.innerHTML = "";
+        complementShownCount = 0;
+    }, 500);
 }
 
 complementOpenerEl.addEventListener("click", function() {
