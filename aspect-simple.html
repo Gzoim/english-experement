@@ -647,6 +647,211 @@
 
 /*комплемент*/
 
+/*тести ту бі*/
+
+
+
+
+.quiz-block {
+    margin: 30px 0 40px;
+    padding: 20px;
+    background-color: #F8F7F4;
+    border-radius: 8px;
+}
+.quiz-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    margin-bottom: 10px;
+}
+.quiz-question {
+    font-family: 'Georgia', serif;
+    font-size: 17px;
+    margin-bottom: 16px;
+}
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.quiz-option {
+    border: 1px solid #ccc;
+    background: #FFF;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: left;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #1A1A1A;
+    transition: border-color 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+}
+.quiz-option:hover {
+    border-color: #1A1A1A;
+}
+.quiz-option.correct {
+    background-color: #EAF3EC;
+    border-color: #2F6844;
+    color: #2F6844;
+    font-weight: bold;
+}
+.quiz-option.incorrect {
+    background-color: #F7ECEC;
+    border-color: #9B3B3B;
+    color: #9B3B3B;
+    font-weight: bold;
+}
+.quiz-option.disabled {
+    cursor: default;
+}
+.quiz-option.disabled:hover {
+    border-color: #ccc;
+}
+.quiz-option.correct.disabled:hover {
+    border-color: #2F6844;
+}
+.quiz-option.incorrect.disabled:hover {
+    border-color: #9B3B3B;
+}
+.quiz-explain-wrap {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s ease;
+}
+.quiz-explain-wrap > div {
+    overflow: hidden;
+}
+.quiz-explain-wrap.open {
+    grid-template-rows: 1fr;
+}
+.quiz-explain {
+    font-size: 13px;
+    color: #555;
+    margin-top: 14px;
+    padding: 12px 14px;
+    background-color: #FFF;
+    border-radius: 6px;
+}
+.quiz-blank {
+    border-bottom: 2px dashed #999;
+    padding: 0 2px;
+}
+.quiz-blank.correct {
+    color: #2F6844;
+    border-bottom-color: #2F6844;
+}
+.quiz-blank.incorrect {
+    color: #9B3B3B;
+    border-bottom-color: #9B3B3B;
+}
+
+
+
+
+.quiz-opener {
+    display: block;
+    width: fit-content;
+    margin: 30px 4px;
+    background-color: rgba(26, 26, 26, 1);
+    color: #FBFBFA;
+    border: none;
+    padding: 8px 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    transition: background-color 0.3s ease;
+}
+.quiz-opener:hover {
+    background-color: #0F2157;
+}
+.quiz-group {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s ease;
+}
+.quiz-group > div {
+    overflow: hidden;
+}
+.quiz-group.open {
+    grid-template-rows: 1fr;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.quiz-summary-wrap {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s ease;
+}
+.quiz-summary-wrap > div {
+    overflow: hidden;
+}
+.quiz-summary-wrap.open {
+    grid-template-rows: 1fr;
+}
+.quiz-summary {
+    text-align: center;
+    padding: 20px 0 4px;
+}
+.quiz-summary-text {
+    font-family: 'Georgia', serif;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+.quiz-summary-text.quiz-summary-success {
+    color: #2F6844;
+}
+.quiz-summary-text.quiz-summary-warning {
+    color: #614706;
+}
+.quiz-summary-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.quiz-summary-btn {
+    background-color: rgba(26, 26, 26, 1);
+    color: #FBFBFA;
+    border: none;
+    padding: 8px 18px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    transition: background-color 0.3s ease;
+}
+.quiz-summary-btn:hover {
+    background-color: #0F2157;
+}
+.quiz-summary-btn-secondary {
+    background-color: transparent;
+    color: #1A1A1A;
+    border: 1px solid #1A1A1A;
+}
+.quiz-summary-btn-secondary:hover {
+    background-color: #1A1A1A;
+    color: #FBFBFA;
+}
+
+/*тести ту бі*/
 
 
 </style>
@@ -663,9 +868,9 @@
 <article>
     
  <h1>How to understand the Simple Aspect? </h1>
- <p>
-  First, we need to know that the Simple aspect has two types of sentences:
- </p>
+    <p>
+      First, we need to know that the Simple aspect has <strong>two types of sentences</strong>:
+    </p>
 
 <div class="sentence-type type-verb">
     <div class="sentence-type-summary" onclick="toggleSentenceType(this)">
@@ -684,7 +889,7 @@
         <div class="sentence-type-alt">also called "To be" sentence</div>
     </div>
     <div class="sentence-type-body"><div>
-        <p>Non-verb sentence (or "To be" sentence) stands for sentences where there is no verb, so there is no action.<br> These sentences just describe information about someone or something (e.g., small, tall, happy, sad, cold...).<br>
+        <p>Non-verb sentence (or "To be" sentence) stands for sentences where there is no action verb, so there is no action.<br> These sentences just describe information about someone or something (e.g., small, tall, happy, sad, cold...).<br>
         Formula: <strong>Subject + To be + Complement</strong></p>
     </div></div>
 </div>
@@ -702,7 +907,7 @@
     </p>-->
 
     <p>
-      Next, what we need to know is that there are three tenses: Present, Past and Future, and each has a Simple aspect. So we have Present Simple, Past Simple and Future Simple, and each has two types of sentences.
+     Next, what we need to know is that there are <strong>three tenses: Present, Past and Future</strong>, and each has a Simple aspect. So we have <strong>Present Simple, Past Simple and Future Simple</strong>, and each has two types of sentences.
     </p><br> 
     <!--<p><br>
     So, what do we have now? <br>
@@ -743,8 +948,8 @@
 </div>
 
     <p>
-    Let's separate them into two groups by the type and start from "To be" sentences.
-    Present, Past and Future non-verb sentence in Simple aspect share the exact same formula:
+     Let's separate them into two groups by the type and start from <span style="color:#614706;">"To be" sentences</span>.
+     Present, Past and Future non-verb sentence in Simple aspect <strong>share the exact same formula</strong>:
     </p><br>
 
 <div style="text-align: center; margin: 30px 0;">
@@ -756,7 +961,7 @@
 </div>
 
     <p>
-     But if they have the same formula, how do we know what tense it is? There is something that really helps us: it is different "To be" forms for each tense. Look for them on the right side of page, in the Help Verbs section.<br>
+     But if they have the same formula, how do we know what tense it is? There is something that really helps us: it is <strong>different <span style="color:#614706;">"To be" forms</span> for each tense</strong>. Look for them on the right side of page, in the <em>Help Verbs</em> section.<br>
      How does it work? Let's have a look at these "To be" forms!<br>
     </p>
 
@@ -786,12 +991,12 @@
  </p><br>-->
 
     <p>
-      Choose the correct "to be" form depending on which tense the sentence needs to be.
+     Choose the <strong>correct "to be" form</strong> depending on which tense the sentence needs to be.
     </p><br>
 
     <p>
-     But if we want to make a Present tense sentence, there are three different "to be" forms: am, is, are. So how do we know which one to choose? <br> And it depends on the Subject.<br>
-    </p>   
+     But if we want to make a Present tense sentence, there are three different "to be" forms: <strong>am, is, are</strong>. So how do we know which one to choose? <br> And it depends on the <strong>Subject</strong>.<br>
+    </p> 
 <div class="tobe-usage-row">
     <div class="tobe-usage-card">
         <div class="tobe-usage-col">
@@ -828,7 +1033,7 @@
     </p>-->
 
     <p>
-     If we want to say "She", then the "To be" form can be: is for present, was for past or will be for future.
+     If we want to say "She", then the "To be" form can be: <span style="color:#453204;">is</span> for present, <span style="color:#453204;">was</span> for past or <span style="color:#453204;">will be</span> for future.
     </p><br>
 
 <div class="subj-switch-row" id="subjSwitch">
@@ -858,10 +1063,90 @@
     </div>
 </div>
 
-    <p> 
-     What is a complement? A complement describes information about the subject.<br>
-     If we dig deep into the complement we will find the limits of "To be" sentences! Everything a "To be" sentence can describe comes from the complement. There is nothing more in this world that can be described in "To be" sentences -- only what the complement includes! <br>
+
+    <p>
+     Subject is not only I you he she it we they.<br>
+     I you he she it we they - <strong>personal pronouns</strong>.<br> 
+     Subject is a role in the sentence: subject is what we talk about. It can be anything - a tree or even love...<br> It is very easy to know the right form of to be for personal pronouns. But what about all other things, how do we know the to be form for them? And here is the answer: we only need to know - is it <strong>one thing or more than one</strong>? If it is one - use <strong>is</strong>. If it's many - use <strong>are</strong>.
+    <br>One apple - is, two apples - are.
+    <br>One tree - is, five trees - are.
+    <br>Love? We cannot count love, so we understand it as one. Everything what can't be counted is recognaized as one.
     </p>
+
+
+    <p>
+     What is a complement? A complement describes information about the subject.<br>
+     If we dig deep into the complement we will find the limits of "To be" sentences! Everything a "To be" sentence can describe comes from the complement. There is nothing more in this world that can be described in "To be" sentences -- only what the complement includes!<br>
+    </p>
+
+
+
+
+
+
+
+   <button class="quiz-opener" id="quizOpener1" onclick="toggleQuizGroup(this, 'quizGroup1')">Check yourself</button>
+<div class="quiz-group" id="quizGroup1"><div>
+
+<div class="quiz-block" data-answered="false">
+    <div class="quiz-label">Quick check</div>
+    <div class="quiz-question">The windows <span class="quiz-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> open.</div>
+    <div class="quiz-options">
+        <button class="quiz-option" data-correct="false">is</button>
+        <button class="quiz-option" data-correct="true">are</button>
+    </div>
+    <div class="quiz-explain-wrap"><div>
+        <div class="quiz-explain">"Windows" is more than one thing, so we use "are".</div>
+    </div></div>
+</div>
+
+<div class="quiz-block" data-answered="false">
+    <div class="quiz-label">Quick check</div>
+    <div class="quiz-question">My friends <span class="quiz-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> happy.</div>
+    <div class="quiz-options">
+        <button class="quiz-option" data-correct="false">is</button>
+        <button class="quiz-option" data-correct="true">are</button>
+    </div>
+    <div class="quiz-explain-wrap"><div>
+        <div class="quiz-explain">"Friends" is more than one person, so we use "are".</div>
+    </div></div>
+</div>
+
+<div class="quiz-block" data-answered="false">
+    <div class="quiz-label">Quick check</div>
+    <div class="quiz-question">Love <span class="quiz-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> a feeling.</div>
+    <div class="quiz-options">
+        <button class="quiz-option" data-correct="true">is</button>
+        <button class="quiz-option" data-correct="false">are</button>
+    </div>
+    <div class="quiz-explain-wrap"><div>
+        <div class="quiz-explain">We can't count "love", so we treat it as one thing and use "is".</div>
+    </div></div>
+</div>
+
+<div class="quiz-block" data-answered="false">
+    <div class="quiz-label">Quick check</div>
+    <div class="quiz-question">Life <span class="quiz-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> beautiful.</div>
+    <div class="quiz-options">
+        <button class="quiz-option" data-correct="true">is</button>
+        <button class="quiz-option" data-correct="false">are</button>
+    </div>
+    <div class="quiz-explain-wrap"><div>
+        <div class="quiz-explain">"Life" is treated as one whole thing, so we use "is".</div>
+    </div></div>
+</div>
+
+<div class="quiz-summary-wrap"><div>
+    <div class="quiz-summary">
+        <div class="quiz-summary-text"></div>
+        <div class="quiz-summary-buttons">
+            <button class="quiz-summary-btn" onclick="resetQuizGroup('quizGroup1')">start again</button>
+            <button class="quiz-summary-btn quiz-summary-btn-secondary" onclick="collapseQuizGroup('quizGroup1', 'quizOpener1')">Close</button>
+        </div>
+    </div>
+</div></div>
+
+</div></div>
 
 
 
@@ -881,6 +1166,7 @@ Time - It tells us the hour, the part of the day, the day of the week. (It is fi
 Number - It shows any mathematical number, score or digit. (The score is three-to-one. My favorite number is eight, The first, The last...)<br>
 Location - It tells us exactly where a person or an object is in space or where it is from. (We are at home. The cat is under the table, From Ukraine, In the world, Online...)</p><br>-->
 
+    
 
 
 
@@ -1230,6 +1516,107 @@ complementOpenerEl.addEventListener("click", function() {
     }
 });
 /* ===== Complement закінчується тут ===== */
+
+
+
+
+
+
+
+/* ===== Тести з вибором відповіді (Quick check) ===== */
+document.querySelectorAll('.quiz-group').forEach(function(group) {
+    group.querySelectorAll('.quiz-block').forEach(function(quiz) {
+        const options = quiz.querySelectorAll('.quiz-option');
+        const explainWrap = quiz.querySelector('.quiz-explain-wrap');
+        const blank = quiz.querySelector('.quiz-blank');
+
+        options.forEach(function(opt) {
+            opt.addEventListener('click', function() {
+                if (quiz.dataset.answered === 'true') return;
+                quiz.dataset.answered = 'true';
+
+                const isCorrect = opt.dataset.correct === 'true';
+                quiz.dataset.result = isCorrect ? 'correct' : 'incorrect';
+
+                if (blank) {
+                    blank.textContent = opt.textContent;
+                    blank.classList.add(isCorrect ? 'correct' : 'incorrect');
+                }
+
+                if (isCorrect) {
+                    opt.classList.add('correct');
+                } else {
+                    opt.classList.add('incorrect');
+                    options.forEach(function(o) {
+                        if (o.dataset.correct === 'true') o.classList.add('correct');
+                    });
+                }
+                options.forEach(function(o) { o.classList.add('disabled'); });
+
+                if (explainWrap) explainWrap.classList.add('open');
+
+                checkGroupCompletion(group);
+            });
+        });
+    });
+});
+
+// перевіряє, чи відповіли на всі тести в групі, і показує підсумок
+function checkGroupCompletion(group) {
+    const blocks = group.querySelectorAll('.quiz-block');
+    const allAnswered = Array.from(blocks).every(b => b.dataset.answered === 'true');
+    if (!allAnswered) return;
+
+    const allCorrect = Array.from(blocks).every(b => b.dataset.result === 'correct');
+    const summaryWrap = group.querySelector('.quiz-summary-wrap');
+    const summaryText = group.querySelector('.quiz-summary-text');
+
+    if (allCorrect) {
+        summaryText.textContent = "Great! You understood this topic well";
+        summaryText.classList.remove('quiz-summary-warning');
+        summaryText.classList.add('quiz-summary-success');
+    } else {
+        summaryText.textContent = "It seems worth reading the topic again.";
+        summaryText.classList.remove('quiz-summary-success');
+        summaryText.classList.add('quiz-summary-warning');
+    }
+    summaryWrap.classList.add('open');
+}
+
+// повертає всі тести групи в початковий стан ("Пройти ще раз")
+function resetQuizGroup(groupId) {
+    const group = document.getElementById(groupId);
+    group.querySelectorAll('.quiz-block').forEach(function(quiz) {
+        quiz.dataset.answered = 'false';
+        quiz.dataset.result = '';
+        quiz.querySelectorAll('.quiz-option').forEach(function(o) {
+            o.classList.remove('correct', 'incorrect', 'disabled');
+        });
+        const blank = quiz.querySelector('.quiz-blank');
+        if (blank) {
+            blank.textContent = '\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0';
+            blank.classList.remove('correct', 'incorrect');
+        }
+        const explainWrap = quiz.querySelector('.quiz-explain-wrap');
+        if (explainWrap) explainWrap.classList.remove('open');
+    });
+    group.querySelector('.quiz-summary-wrap').classList.remove('open');
+}
+
+// відкриває/закриває всю групу тестів (кнопка "Check yourself")
+function toggleQuizGroup(openerEl, groupId) {
+    openerEl.classList.toggle('open');
+    document.getElementById(groupId).classList.toggle('open');
+}
+
+// закриває групу тестів (кнопка в підсумку)
+function collapseQuizGroup(groupId, openerId) {
+    document.getElementById(groupId).classList.remove('open');
+    document.getElementById(openerId).classList.remove('open');
+}
+
+
+/* ===== Тести закінчуються тут ===== */
 </script>
 
 </body>
