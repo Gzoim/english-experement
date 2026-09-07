@@ -856,41 +856,42 @@
 
 
 /* формула (заперечення / питання) */
-
-
 .qf-transform {
     max-width: 420px;
-    margin: 30px auto 0px;
+    margin: 30px auto 10px;
     text-align: center;
 }
-.qf-known {
-    display: inline-block;
+.qf-card {
     background-color: #F5F4F0;
-    border-radius: 6px;
-    padding: 10px 18px;
+    border-radius: 8px;
+    padding: 20px 20px 16px;
+    margin-bottom: 16px;
+}
+.qf-known {
     font-family: 'Georgia', serif;
-    font-size: 16px;
-    color: #1A1A1A;
+    font-size: 15px;
+    color: #888;
 }
-.qf-arrow {
-    margin: 10px 0;
-    color: #999;
-    font-size: 16px;
-    line-height: 1.3;
+.qf-divider {
+    position: relative;
+    height: 1px;
+    background-color: #DDD7C9;
+    margin: 16px 0;
 }
-.qf-arrow-note {
-    display: block;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.qf-divider span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #F5F4F0;
+    padding: 0 10px;
     color: #999;
-    margin-top: 2px;
+    font-size: 13px;
 }
 .qf-result {
     font-family: 'Georgia', serif;
-    font-size: 19px;
+    font-size: 18px;
     color: #1A1A1A;
-    margin-bottom: 16px;
 }
 .qf-tobe {
     color: #614706;
@@ -907,8 +908,6 @@
 .qf-examples div {
     margin: 4px 0;
 }
-
-
 /* формула (заперечення / питання) */
 
 
@@ -1292,12 +1291,14 @@
 We already have "To be" formula. Let's see how to turn it into a negative sentence. All we do is jusst add "not" right after to be. Pay attention to the future tense. </p>
 
 <div class="qf-transform">
-    <div class="qf-known">Subject + <span class="qf-tobe">to be</span> + Complement</div>
-    <div class="qf-arrow">↓<span class="qf-arrow-note"></span></div>
-    <div class="qf-result">Subject + <span class="qf-tobe">to be</span> + not + Complement</div>
+    <div class="qf-card">
+        <div class="qf-known">Subject + <span class="qf-tobe">to be</span> + Complement</div>
+        <div class="qf-divider"><span>↓</span></div>
+        <div class="qf-result">Subject + <span class="qf-tobe">to be</span> + not + Complement</div>
+    </div>
     <div class="qf-examples">
-        <!--<div>She <span class="qf-tobe">is</span> not happy.</div>
-        <div>They <span class="qf-tobe">will</span> not <span class="qf-tobe">be</span> students.</div>-->
+        <div>She <span class="qf-tobe">is</span> not happy.</div>
+        <div>They <span class="qf-tobe">will</span> not <span class="qf-tobe">be</span> students.</div>
     </div>
 </div>
   
@@ -1307,12 +1308,14 @@ We already have "To be" formula. Let's see how to turn it into a negative senten
 Now let's take the same formula and turn it into a question. All we do is just move "to be" to the very front before the subject.</p>
 
 <div class="qf-transform">
-    <div class="qf-known">Subject + <span class="qf-tobe">to be</span> + Complement</div>
-    <div class="qf-arrow">↓<span class="qf-arrow-note"></span></div>
-    <div class="qf-result"><span class="qf-tobe">To be</span> + subject + Complement?</div>
+    <div class="qf-card">
+        <div class="qf-known">Subject + <span class="qf-tobe">to be</span> + Complement</div>
+        <div class="qf-divider"><span>↓</span></div>
+        <div class="qf-result"><span class="qf-tobe">To be</span> + subject + Complement?</div>
+    </div>
     <div class="qf-examples">
-       <!-- <div><span class="qf-tobe">Is</span> she happy?</div>
-        <div><span class="qf-tobe">Will</span> they <span class="qf-tobe">be</span> students?</div>-->
+        <div><span class="qf-tobe">Is</span> she happy?</div>
+        <div><span class="qf-tobe">Will</span> they <span class="qf-tobe">be</span> students?</div>
     </div>
 </div>
 
