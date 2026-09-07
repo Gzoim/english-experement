@@ -927,6 +927,57 @@
 
 
 
+
+/* три форми речення позитивне негативне і заперечне */
+
+
+.cycle-card {
+    max-width: 380px;
+    margin: 0 auto;
+    background-color: #F5F4F0;
+    border-radius: 8px;
+    padding: 26px 20px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s ease;
+}
+.cycle-card:hover {
+    background-color: #EFEDE7;
+}
+.cycle-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #999;
+    margin-bottom: 10px;
+    transition: opacity 0.3s ease;
+}
+.cycle-sentence {
+    font-family: 'Georgia', serif;
+    font-size: 19px;
+    color: #1A1A1A;
+    transition: opacity 0.3s ease;
+    min-height: 28px;
+}
+.cycle-sentence .tobe-hl {
+    color: #614706;
+    font-weight: bold;
+}
+.cycle-sentence .not-hl {
+    color: #9B3B3B;
+    font-weight: bold;
+}
+.cycle-hint {
+    margin-top: 14px;
+    font-size: 11px;
+    color: #999;
+}
+.cycle-hint::before {
+    content: "↻ ";
+}
+/* три форми речення позитивне негативне і заперечне */
+
 </style>
 
 <body>
@@ -1247,6 +1298,22 @@ Now let's take the same formula and turn it into a question. All we do is just m
         <div><span class="qf-tobe">Are</span> they students?</div>
     </div>
 </div>
+
+<p>Let's see how it works: the same sentence, and how its structure changes in the positive, negative, and question forms.</p>
+
+<div class="cycle-card" onclick="cycleSentence()">
+    <div class="cycle-label" id="cycleLabel">Positive</div>
+    <div class="cycle-sentence" id="cycleSentence">She <span class="tobe-hl">is</span> happy.</div>
+    <div class="cycle-hint">click here</div>
+</div>
+
+
+
+
+
+
+
+
 
 
     <h3>What is a complement?</h3>
@@ -1723,6 +1790,35 @@ function collapseQuizGroup(groupId, openerId) {
 
 
 /* ===== Тести закінчуються тут ===== */
+
+
+
+
+/* ===== три види речення ===== */
+const cycleStates = [
+    { label: "Positive", html: 'She <span class="tobe-hl">is</span> happy.' },
+    { label: "Negative", html: 'She <span class="tobe-hl">is</span> <span class="not-hl">not</span> happy.' },
+    { label: "Question", html: '<span class="tobe-hl">Is</span> she happy?' }
+];
+let cycleIndex = 0;
+
+function cycleSentence() {
+    const labelEl = document.getElementById('cycleLabel');
+    const sentEl = document.getElementById('cycleSentence');
+
+    labelEl.style.opacity = 0;
+    sentEl.style.opacity = 0;
+
+    setTimeout(() => {
+        cycleIndex = (cycleIndex + 1) % cycleStates.length;
+        labelEl.textContent = cycleStates[cycleIndex].label;
+        sentEl.innerHTML = cycleStates[cycleIndex].html;
+        labelEl.style.opacity = 1;
+        sentEl.style.opacity = 1;
+    }, 300);
+}
+/* ===== три види речення ===== */
+
 </script>
 
 </body>
