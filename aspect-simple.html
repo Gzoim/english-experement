@@ -913,6 +913,20 @@
 
 
 
+
+
+
+
+.section-divider {
+    border: none;
+    border-top: 1px solid #E0DCD3;
+    margin: 50px 0;
+}
+
+
+
+
+
 </style>
 
 <body>
@@ -1135,7 +1149,7 @@
     <br>One tree - is, five trees - are.
     <br>Love? We cannot count love, so we understand it as one. Everything what can't be counted is recognaized as one.
     </p>
-    <button class="quiz-opener" id="quizOpener1" onclick="toggleQuizGroup(this, 'quizGroup1')">Check yourself</button>
+    <button class="quiz-opener" id="quizOpener1" onclick="toggleQuizGroup(this, 'quizGroup1')">Test yourself</button>
 <div class="quiz-group" id="quizGroup1"><div>
 
 <div class="quiz-block" data-answered="false">
@@ -1200,6 +1214,14 @@
 
 
 
+
+
+<hr class="section-divider">
+
+
+
+
+
     <h3>How to make a negative sentence?</h3>
 We already have "To be" formula. Let's see how to turn it into a negative sentence. All we do is jusst add "not" right after to be. </p>
 
@@ -1226,10 +1248,12 @@ Now let's take the same formula and turn it into a question. All we do is just m
     </div>
 </div>
 
+
+    <h3>What is a complement?</h3>
     <p>
-     What is a complement? A complement describes information about the subject.<br>
+     A complement describes information about the subject.<br>
      If we dig deep into the complement we will find the limits of "To be" sentences! Everything a "To be" sentence can describe comes from the complement. There is nothing more in this world that can be described in "To be" sentences -- only what the complement includes!<br><br>
-     There is no need to study these at all categories. This is just for your vision of what complement is.
+     There is no need to study these all complement categories. This is just for your vision of what complement is.
     </p>
 
 <div class="complement-opener" id="complementOpener">Complement</div>
@@ -1685,7 +1709,7 @@ function resetQuizGroup(groupId) {
     group.querySelector('.quiz-summary-wrap').classList.remove('open');
 }
 
-// відкриває/закриває всю групу тестів (кнопка "Check yourself")
+// відкриває/закриває всю групу тестів (кнопка "Test yourself")
 function toggleQuizGroup(openerEl, groupId) {
     openerEl.classList.toggle('open');
     document.getElementById(groupId).classList.toggle('open');
