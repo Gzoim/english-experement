@@ -992,6 +992,135 @@
 }
 /* три часи закінчуються тут */
 
+
+
+
+
+/* тест склади речення (заперечення/питання по всіх часах) */
+.builder-quiz {
+    background-color: #F8F7F4;
+    border-radius: 8px;
+    padding: 24px 22px;
+}
+.builder-progress {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    margin-bottom: 14px;
+}
+.builder-given {
+    color: #1A1A1A;
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+}
+.builder-task {
+    display: block;
+    font-size: 13px;
+    color: #3A3A3A;
+    margin-top: 6px;
+    margin-bottom: 18px;
+}
+.builder-answer-line {
+    min-height: 26px;
+    background-color: #FFFDF8;
+    border: 1px solid #E0DCD3;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-family: 'Georgia', serif;
+    font-size: 17px;
+    margin-bottom: 18px;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.builder-answer-line.placeholder {
+    color: #999;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+}
+.builder-answer-line.correct {
+    border-color: #2F6844;
+    background-color: #EAF3EC;
+    color: #2F6844;
+}
+.builder-answer-line.incorrect {
+    border-color: #9B3B3B;
+    background-color: #F7ECEC;
+    color: #9B3B3B;
+}
+.builder-words {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+.builder-word {
+    border: 1px solid #E0DCD3;
+    background: #F5F4F0;
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Georgia', serif;
+    color: #1A1A1A;
+    transition: all 0.2s ease;
+}
+.builder-word:hover {
+    border-color: #999;
+    background: #ECEAE5;
+}
+.builder-word.selected {
+    background-color: #1A1A1A;
+    color: #FBFBFA;
+    border-color: #1A1A1A;
+}
+.builder-word.disabled {
+    cursor: default;
+    opacity: 0.5;
+}
+.builder-btn {
+    background-color: rgba(26, 26, 26, 1);
+    color: #FBFBFA;
+    border: none;
+    padding: 8px 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    transition: background-color 0.3s ease;
+}
+.builder-btn:hover {
+    background-color: #0F2157;
+}
+.builder-feedback {
+    margin-top: 16px;
+    font-size: 13px;
+    color: #444;
+    background-color: #FFFDF8;
+    border-radius: 6px;
+    padding: 12px 14px;
+    display: none;
+}
+.builder-feedback.show { display: block; }
+.builder-summary {
+    text-align: center;
+}
+.builder-summary-text {
+    font-family: 'Georgia', serif;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+.builder-summary-text.success { color: #2F6844; }
+.builder-summary-text.warning { color: #3A3A3A; }
+.builder-summary-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+/* тести склади речення закінчується тут */
+
 </style>
 
 <body>
@@ -1214,9 +1343,11 @@
     <br>One tree - is, five trees - are.
     <br>Love? We cannot count love, so we understand it as one. Everything what can't be counted is recognaized as one.
     </p>
+
+
+
     <button class="quiz-opener" id="quizOpener1" onclick="toggleQuizGroup(this, 'quizGroup1')">Test yourself</button>
 <div class="quiz-group" id="quizGroup1"><div>
-
 <div class="quiz-block" data-answered="false">
     <div class="quiz-label">Quick check</div>
     <div class="quiz-question">The windows <span class="quiz-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> open.</div>
@@ -1228,7 +1359,6 @@
         <div class="quiz-explain">"Windows" is more than one thing, so we use "are".</div>
     </div></div>
 </div>
-
 <div class="quiz-block" data-answered="false">
     <div class="quiz-label">Quick check</div>
     <div class="quiz-question">My friends <span class="quiz-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> happy.</div>
@@ -1240,7 +1370,6 @@
         <div class="quiz-explain">"Friends" is more than one person, so we use "are".</div>
     </div></div>
 </div>
-
 <div class="quiz-block" data-answered="false">
     <div class="quiz-label">Quick check</div>
     <div class="quiz-question">Love <span class="quiz-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> a feeling.</div>
@@ -1252,7 +1381,6 @@
         <div class="quiz-explain">We can't count "love", so we treat it as one thing and use "is".</div>
     </div></div>
 </div>
-
 <div class="quiz-block" data-answered="false">
     <div class="quiz-label">Quick check</div>
     <div class="quiz-question">Life <span class="quiz-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> beautiful.</div>
@@ -1264,7 +1392,28 @@
         <div class="quiz-explain">"Life" is treated as one whole thing, so we use "is".</div>
     </div></div>
 </div>
-
+<div class="quiz-block" data-answered="false">
+    <div class="quiz-label">Quick check</div>
+    <div class="quiz-question">The keys <span class="quiz-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> lost.</div>
+    <div class="quiz-options">
+        <button class="quiz-option" data-correct="false">was</button>
+        <button class="quiz-option" data-correct="true">were</button>
+    </div>
+    <div class="quiz-explain-wrap"><div>
+        <div class="quiz-explain">"Keys" is more than one thing, so we use "were".</div>
+    </div></div>
+</div>
+<div class="quiz-block" data-answered="false">
+    <div class="quiz-label">Quick check</div>
+    <div class="quiz-question">History <span class="quiz-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> interesting.</div>
+    <div class="quiz-options">
+        <button class="quiz-option" data-correct="true">was</button>
+        <button class="quiz-option" data-correct="false">were</button>
+    </div>
+    <div class="quiz-explain-wrap"><div>
+        <div class="quiz-explain">"History" is treated as one whole thing, so we use "was".</div>
+    </div></div>
+</div>
 <div class="quiz-summary-wrap"><div>
     <div class="quiz-summary">
         <div class="quiz-summary-text"></div>
@@ -1274,7 +1423,6 @@
         </div>
     </div>
 </div></div>
-
 </div></div>
 
 
@@ -1353,10 +1501,14 @@ Now let's take the same formula and turn it into a question. All we do is just m
 
 
 
+<button class="quiz-opener" id="quizOpener3" onclick="toggleQuizGroup(this, 'quizGroup3')">Test yourself</button>
+<div class="quiz-group" id="quizGroup3"><div>
+    <div class="builder-quiz" id="builderQuiz"></div>
+</div></div>
 
 
 
-
+<hr class="section-divider">
 
 
     <h3>What is a complement?</h3>
@@ -1871,6 +2023,140 @@ function cycleSentence(key) {
     }, 300);
 }
 /* ===== три часи закінчуються тут ===== */
+
+
+
+
+
+
+/* ===== Склади речення (заперечення/питання, всі часи) ===== */
+const builderData = [
+    { given: "She is happy.", task: "make it negative", words: ["She","happy","not","is","are","am"], correct: ["She","is","not","happy"], explain: "\"Not\" goes right after \"to be\"." },
+    { given: "He was busy.", task: "make it negative", words: ["He","busy","not","was","were","is"], correct: ["He","was","not","busy"], explain: "We use \"was\" for he/she/it in the past, and \"not\" goes right after it." },
+    { given: "They will be late.", task: "make it negative", words: ["They","late","not","will","be","was"], correct: ["They","will","not","be","late"], explain: "\"Not\" goes right after \"will\", before \"be\"." },
+    { given: "They are ready.", task: "make it a question", words: ["they","ready","Are","Is","Do"], correct: ["Are","they","ready"], explain: "This is a \"to be\" sentence, so the question starts with \"Are\", not \"Do\"." },
+    { given: "She was happy.", task: "make it a question", words: ["she","happy","Was","Were","Did"], correct: ["Was","she","happy"], explain: "\"Was\" is for she/he/it in the past, and it moves to the front." },
+    { given: "We will be free.", task: "make it a question", words: ["we","free","be","Will","Do","Is"], correct: ["Will","we","be","free"], explain: "\"Will\" moves to the front, \"be\" stays after the subject." }
+];
+let builderIndex = 0;
+let builderSelected = [];
+let builderAnswered = false;
+let builderHasMistake = false;
+
+const builderContainer = document.getElementById('builderQuiz');
+
+function renderBuilderQuestion() {
+    const q = builderData[builderIndex];
+    builderSelected = [];
+    builderAnswered = false;
+
+    builderContainer.innerHTML = `
+        <div class="builder-progress">Question ${builderIndex + 1} of ${builderData.length}</div>
+        <div class="builder-given">${q.given}</div>
+        <span class="builder-task">${q.task}</span>
+        <div class="builder-answer-line placeholder" id="builderAnswerLine">Click the words below</div>
+        <div class="builder-words" id="builderWords"></div>
+        <button class="builder-btn" id="builderCheckBtn" onclick="checkBuilderAnswer()">Check</button>
+        <div class="builder-feedback" id="builderFeedback"></div>
+    `;
+
+    const wordsWrap = document.getElementById('builderWords');
+    q.words.forEach((word, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'builder-word';
+        btn.textContent = word;
+        btn.onclick = function() { toggleBuilderWord(i); };
+        wordsWrap.appendChild(btn);
+    });
+}
+
+function toggleBuilderWord(i) {
+    if (builderAnswered) return;
+    const pos = builderSelected.indexOf(i);
+    if (pos === -1) {
+        builderSelected.push(i);
+    } else {
+        builderSelected.splice(pos, 1);
+    }
+    updateBuilderDisplay();
+}
+
+function updateBuilderDisplay() {
+    const q = builderData[builderIndex];
+    const line = document.getElementById('builderAnswerLine');
+    const wordButtons = document.querySelectorAll('#builderWords .builder-word');
+
+    wordButtons.forEach((btn, i) => {
+        btn.classList.toggle('selected', builderSelected.includes(i));
+    });
+
+    if (builderSelected.length === 0) {
+        line.textContent = "Click the words below";
+        line.classList.add('placeholder');
+    } else {
+        line.classList.remove('placeholder');
+        line.textContent = builderSelected.map(i => q.words[i]).join(' ');
+    }
+}
+
+function checkBuilderAnswer() {
+    const q = builderData[builderIndex];
+    const chosen = builderSelected.map(i => q.words[i]);
+    const punctuation = q.task.includes("negative") ? "." : "?";
+    const isCorrect = JSON.stringify(chosen) === JSON.stringify(q.correct);
+    builderAnswered = true;
+    if (!isCorrect) builderHasMistake = true;
+
+    const line = document.getElementById('builderAnswerLine');
+    line.textContent = chosen.join(' ') + punctuation;
+    line.classList.remove('placeholder');
+    line.classList.add(isCorrect ? 'correct' : 'incorrect');
+
+    document.querySelectorAll('#builderWords .builder-word').forEach(btn => btn.classList.add('disabled'));
+    document.getElementById('builderCheckBtn').style.display = 'none';
+
+    const feedback = document.getElementById('builderFeedback');
+    feedback.classList.add('show');
+    if (isCorrect) {
+        feedback.innerHTML = `${q.explain}<br><br><button class="builder-btn" onclick="nextBuilderQuestion()">${builderIndex < builderData.length - 1 ? 'Next' : 'Finish'}</button>`;
+    } else {
+        feedback.innerHTML = `Correct answer: <strong>${q.correct.join(' ') + punctuation}</strong><br>${q.explain}<br><br><button class="builder-btn" onclick="nextBuilderQuestion()">${builderIndex < builderData.length - 1 ? 'Next' : 'Finish'}</button>`;
+    }
+}
+
+function nextBuilderQuestion() {
+    builderIndex++;
+    if (builderIndex >= builderData.length) {
+        showBuilderSummary();
+    } else {
+        renderBuilderQuestion();
+    }
+}
+
+function showBuilderSummary() {
+    const summaryText = builderHasMistake
+        ? "It seems worth reading the topic again."
+        : "Great! You understood this topic well";
+    const summaryClass = builderHasMistake ? "warning" : "success";
+    builderContainer.innerHTML = `
+        <div class="builder-summary">
+            <div class="builder-summary-text ${summaryClass}">${summaryText}</div>
+            <div class="builder-summary-buttons">
+                <button class="builder-btn" onclick="restartBuilderQuiz()">start again</button>
+                <button class="builder-btn" onclick="collapseQuizGroup('quizGroup3', 'quizOpener3')">Close</button>
+            </div>
+        </div>
+    `;
+}
+
+function restartBuilderQuiz() {
+    builderIndex = 0;
+    builderHasMistake = false;
+    renderBuilderQuestion();
+}
+
+renderBuilderQuestion();
+/* ===== Склади речення закінчується тут ===== */
 
 </script>
 
