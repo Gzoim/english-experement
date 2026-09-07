@@ -928,15 +928,20 @@
 
 
 
-/* три форми речення позитивне негативне і заперечне */
-
-
+/* три часи (Present/Past/Future) - кожна картка перемикається окремо по колу */
+.cycle-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
 .cycle-card {
-    max-width: 380px;
-    margin: 0 auto;
+    flex: 1;
+    min-width: 150px;
+    max-width: 190px;
     background-color: #F5F4F0;
     border-radius: 8px;
-    padding: 26px 20px;
+    padding: 14px 10px;
     text-align: center;
     cursor: pointer;
     user-select: none;
@@ -945,20 +950,29 @@
 .cycle-card:hover {
     background-color: #EFEDE7;
 }
-.cycle-label {
-    font-size: 11px;
+.cycle-tense {
+    font-size: 10px;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.2px;
+    color: #2E4466;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.cycle-label {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
     color: #999;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     transition: opacity 0.3s ease;
 }
 .cycle-sentence {
     font-family: 'Georgia', serif;
-    font-size: 19px;
+    font-size: 14px;
     color: #1A1A1A;
     transition: opacity 0.3s ease;
-    min-height: 28px;
+    min-height: 36px;
+    line-height: 36px;
 }
 .cycle-sentence .tobe-hl {
     color: #614706;
@@ -969,14 +983,14 @@
     font-weight: bold;
 }
 .cycle-hint {
-    margin-top: 14px;
-    font-size: 11px;
+    margin-top: 8px;
+    font-size: 9px;
     color: #999;
 }
 .cycle-hint::before {
     content: "↻ ";
 }
-/* три форми речення позитивне негативне і заперечне */
+/* три часи закінчуються тут */
 
 </style>
 
@@ -1285,6 +1299,8 @@ We already have "To be" formula. Let's see how to turn it into a negative senten
         <div>They <span class="qf-tobe">are</span> not students.</div>
     </div>
 </div>
+  
+  <hr class="section-divider">
 
 <h3>How to make a question?</h3>
 Now let's take the same formula and turn it into a question. All we do is just move "to be" to the very front before the subject.</p>
@@ -1299,12 +1315,35 @@ Now let's take the same formula and turn it into a question. All we do is just m
     </div>
 </div>
 
-<p>Let's see how it works: the same sentence, and how its structure changes in the positive, negative, and question forms.</p>
+<hr class="section-divider">
 
-<div class="cycle-card" onclick="cycleSentence()">
-    <div class="cycle-label" id="cycleLabel">Positive</div>
-    <div class="cycle-sentence" id="cycleSentence">She <span class="tobe-hl">is</span> happy.</div>
-    <div class="cycle-hint">click here</div>
+<p>Let's see how it works: the same sentence, and how its structure changes in the positive, negative, and question forms.</p>
+<br>
+<br>
+
+<div class="cycle-row">
+
+    <div class="cycle-card" onclick="cycleSentence('present')">
+        <div class="cycle-tense">Present</div>
+        <div class="cycle-label" id="cycleLabel-present">Positive</div>
+        <div class="cycle-sentence" id="cycleSentence-present">She <span class="tobe-hl">is</span> happy.</div>
+        <div class="cycle-hint">click here</div>
+    </div>
+
+    <div class="cycle-card" onclick="cycleSentence('past')">
+        <div class="cycle-tense">Past</div>
+        <div class="cycle-label" id="cycleLabel-past">Positive</div>
+        <div class="cycle-sentence" id="cycleSentence-past">She <span class="tobe-hl">was</span> happy.</div>
+        <div class="cycle-hint">click here</div>
+    </div>
+
+    <div class="cycle-card" onclick="cycleSentence('future')">
+        <div class="cycle-tense">Future</div>
+        <div class="cycle-label" id="cycleLabel-future">Positive</div>
+        <div class="cycle-sentence" id="cycleSentence-future">She <span class="tobe-hl">will be</span> happy.</div>
+        <div class="cycle-hint">click here</div>
+    </div>
+
 </div>
 
 
@@ -1794,30 +1833,40 @@ function collapseQuizGroup(groupId, openerId) {
 
 
 
-/* ===== три види речення ===== */
-const cycleStates = [
-    { label: "Positive", html: 'She <span class="tobe-hl">is</span> happy.' },
-    { label: "Negative", html: 'She <span class="tobe-hl">is</span> <span class="not-hl">not</span> happy.' },
-    { label: "Question", html: '<span class="tobe-hl">Is</span> she happy?' }
-];
-let cycleIndex = 0;
-
-function cycleSentence() {
-    const labelEl = document.getElementById('cycleLabel');
-    const sentEl = document.getElementById('cycleSentence');
-
+/* ===== три часи (Present/Past/Future), кожен по колу Positive -> Negative -> Question ===== */
+const cycleData = {
+    present: [
+        { label: "Positive", html: 'She <span class="tobe-hl">is</span> happy.' },
+        { label: "Negative", html: 'She <span class="tobe-hl">is</span> <span class="not-hl">not</span> happy.' },
+        { label: "Question", html: '<span class="tobe-hl">Is</span> she happy?' }
+    ],
+    past: [
+        { label: "Positive", html: 'She <span class="tobe-hl">was</span> happy.' },
+        { label: "Negative", html: 'She <span class="tobe-hl">was</span> <span class="not-hl">not</span> happy.' },
+        { label: "Question", html: '<span class="tobe-hl">Was</span> she happy?' }
+    ],
+    future: [
+        { label: "Positive", html: 'She <span class="tobe-hl">will be</span> happy.' },
+        { label: "Negative", html: 'She <span class="tobe-hl">will</span> <span class="not-hl">not</span> <span class="tobe-hl">be</span> happy.' },
+        { label: "Question", html: '<span class="tobe-hl">Will</span> she <span class="tobe-hl">be</span> happy?' }
+    ]
+};
+const cycleIndexes = { present: 0, past: 0, future: 0 };
+function cycleSentence(key) {
+    const labelEl = document.getElementById('cycleLabel-' + key);
+    const sentEl = document.getElementById('cycleSentence-' + key);
+    const states = cycleData[key];
     labelEl.style.opacity = 0;
     sentEl.style.opacity = 0;
-
     setTimeout(() => {
-        cycleIndex = (cycleIndex + 1) % cycleStates.length;
-        labelEl.textContent = cycleStates[cycleIndex].label;
-        sentEl.innerHTML = cycleStates[cycleIndex].html;
+        cycleIndexes[key] = (cycleIndexes[key] + 1) % states.length;
+        labelEl.textContent = states[cycleIndexes[key]].label;
+        sentEl.innerHTML = states[cycleIndexes[key]].html;
         labelEl.style.opacity = 1;
         sentEl.style.opacity = 1;
     }, 300);
 }
-/* ===== три види речення ===== */
+/* ===== три часи закінчуються тут ===== */
 
 </script>
 
